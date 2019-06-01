@@ -1,0 +1,11 @@
+This will be your first skill test. You will be presented with options and will or will not be able to perform corresponding action unless requirements to perform it are met.
+This could be to have above a certain skill level in a certain discipline, or to have an item such as a lock pick in your inventory.
+Whichever choice you pick will give bonuses to corresponding stats and skills.
+
+If you for example pick a lock successfully your lock picking skill will increase.
+Or for instance if you kick in a heavy door your strength attribute will be permanently raised
+
+You yourself will have to decide which choices you make and then deal with how they will influence future choices.
+
+Because the world is dynamic and open you might not meet the requirements of a certain skill test and thus be unable to explore an area or perform an action to proceed.
+However you may return to the area again when requirements are met. The difficulty of the required skill test is usually a good indication as to an areas difficulty.

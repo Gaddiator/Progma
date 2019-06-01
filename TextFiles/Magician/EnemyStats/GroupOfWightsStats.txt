@@ -1,0 +1,10 @@
+40 - Max Health
+40 - Current Health
+5 - Intelligence
+5 - Personality
+5 - Willpower
+15 - Endurance
+25 - Strength
+20 - Agility
+25 - Speed
+10 - Luck

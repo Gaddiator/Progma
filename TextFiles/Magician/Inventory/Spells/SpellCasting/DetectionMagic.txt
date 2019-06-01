@@ -1,0 +1,2 @@
+DetectLife:1
+DetectDeath:0

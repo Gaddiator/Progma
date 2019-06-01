@@ -1,0 +1,8 @@
+Taking a brief look around you decide that you should take a few minutes to recuperate after the fight. Sliding over to the corner of the room you lay down by the broken barrels and take a small nap.
+When you wake you briefly check your wounds and do what you can for the many scrapes and bruises. After you finish and because of the nap you feel refreshed and renewed.  - ( +12 Health)
+
+Taking a deep breath you get up and...
+
+Enter the Novice Mage's Quarters. - (Press 1)
+Go check the cellar. - (Press 2)
+Loot the wights. - (Press 3)

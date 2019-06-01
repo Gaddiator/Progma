@@ -1,0 +1,21 @@
+This is a secondary province and will be considered a DLC. Work will be started on this once development of Progma is complete and it will the the next addition to the series.
+Asthcardia is a relatively peace province however, it is permeated to its core with powerful magical residue from times past. This means that there are many unique creatures and locations with new dangers.
+It is a very forested land and mostly everywhere that isn't under the shadowy blanket of branches is due to human or magical interference.
+While it is teeming with wildlife and nature there are still many areas to explore. Lakes, caves, orchards, meadows and much more.
+
+One interesting thing to note is that forgotten and scattered throughout the land are portals, which if used will transport the player to another location.
+Some portals will be useful, others not so much. Some will transport you to new and exiting areas, while some might thrust you into the most dangerous and volatile environments.
+One thing is for certain, you'd better think twice before entering one of these.
+
+The addition of this will implement new spells, quests, character, items and much more.
+
+Locations:
+
+//Main
+    - , ().
+
+//Secondary
+    - , ().
+
+//Tertiary
+    - , ().

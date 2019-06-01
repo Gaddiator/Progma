@@ -1,0 +1,2 @@
+LightIronMace:0
+LightSteelMace:0

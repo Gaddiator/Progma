@@ -1,0 +1,11 @@
+Summoning forth your magical energy you start to conjure a fireball and almost instantaneously a fiery ball of red energy appears in your hand, bathing the cellar in glorious light.
+The cellar is not to dark and seems to have escaped notice by the attacking wights. Food and drink remain on the wooden shelves untouched, with many sacks and containers laying on the floor.
+
+You see a backpack in one corner which could be used to carry food and other supplies you might find.
+Currently you need some medical supplies, suitable clothes fot the snow and a collection of foods and drinks enough to make down out of the mountains.
+
+What now you think?
+
+Grab the backpack. - (Press 1)
+Loot the area. - (Press 2)
+Leave the cellar. - (press 3)

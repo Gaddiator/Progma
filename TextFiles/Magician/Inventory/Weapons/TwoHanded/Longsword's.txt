@@ -1,0 +1,2 @@
+IronLongsword:0
+SteelLongsword:0

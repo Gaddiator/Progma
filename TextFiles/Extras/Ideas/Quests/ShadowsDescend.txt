@@ -1,0 +1,58 @@
+/*
+    - This quest will let the player join in on some of the conflict in Progma.
+    When the player asks non-player character's for news they will tell the player of the brewing hostilities and tensions between factions and thus start the quest.
+    These non-player character's will be spread out throughout the land in places like taverns, shops, city streets, walking on roads etc.
+*/
+
+//Quest plans
+    - So in this war there are going to be three main factions fighting for ultimate control of progma.
+
+    - The Andvarii
+        - A group of powerful mages who fight to protect magic and its users.
+        Both the house of Vikir and the house of Wyrddin fear magic and despise its users, just like mostly everyone else in progma.
+        Though they fight each other both are also focused on a mission to eradicate all mages and stop the practice of magic.
+
+        The Andvarii are ruthlessly fighting to survive and mages from throughout Progma are slowly banding together into an army.
+        While the houses of Vikir and Wryddin fight each other for naught but material gain and petty disagreements, the Andvarii are ultimately fighting for their survival.
+        One things for sure, these guys wont go down without a fight.
+
+    - The House of Vikir
+        This house is very powerful and resourceful. They have many supporters from foreign provinces and lands, their army's well equipped and trained.
+        They reside in the south east of Progma just outside of the great forest. They have a deep seated rivalry with the house of Wryddin.
+
+        The rivalry started a long time ago when the prince of house Vikir, disrespected a warrior of house Wryddin who then demanded he dual with him.
+        In his foolishness the prince agreed. The warrior beheaded him with a flurry blows and skilled swordsmanship leaving his blood to pool in the dust.
+        It had been an honest challenge, however the princes brother attacked and murdered the warrior in dishonest retaliation.
+        What happened after that is now history.
+
+    - The House of Wryddin
+        An ancient and dangerous house. They have lived in Progma for as long as any can remember and their castles remain standing and garrisoned with some of their most fearsome warriors.
+        They live in and around the western steeps, preferring the cover and protection of the snow and mountains to the expanse of hills and trees that the house of Vikir prefers.
+        They also hate and despise the house of Vikir just as much as the house of Vikir hates and despises them.
+
+        The rivalry started a long time ago when the prince of house Vikir, disrespected a warrior of house Wryddin who then demanded he dual with him.
+        In his foolishness the prince agreed. The warrior beheaded him with a flurry blows and skilled swordsmanship leaving his blood to pool in the dust.
+        It had been an honest challenge, however the princes brother attacked and murdered the warrior in dishonest retaliation.
+        What happened after that is history.
+
+//Quest plans
+
+
+/*
+    - If the player is a magician they cannot join either the house of Vikir or the house of Wryddin. They will join the Andvarii. - Maybe if the magician is versed in dark magics they can join.
+
+    - If the player is a warrior or a rouge who has learned to use magic they also cannot join either the house of Vikir or the house of Wryddin. They will join the Andvarii.
+
+    - This will be a main quest line and will be composed of about ten to fifteen quests.
+
+    - This quest line will be initialized when the player hears about the hostilities from a non-playable character and will be prompted to find out more.
+      Finally this will lead to them joining one of the three factions.
+*/
+
+
+
+
+
+
+
+

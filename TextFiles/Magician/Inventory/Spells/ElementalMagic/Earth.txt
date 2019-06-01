@@ -1,0 +1,2 @@
+RockBlast:0
+RockWall:0

@@ -1,0 +1,4 @@
+HealthPotion:0
+ManaPotion:0
+ResistColdPotion:0
+ResistHeatPotion:0

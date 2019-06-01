@@ -1,0 +1,30 @@
+//When a letter is entered instead of a number for UserInput Choices handle it with this...
+
+/*
+    try(){
+
+      //code to be executed here.
+      //e.g
+
+      if(UserInput == 1){
+        //Do Something
+      }
+      else if(UserInput == 2){
+        //Do Something
+      }
+      else{
+        //This only works if an incorrect number is entered.
+        //There is no handler for when a letter or symbol is entered instead of a number.
+        //Thus the addition of the InputMismatchException.
+
+        System.out.println("Invalid entry");
+        System.out.println("Please enter '1' or '2'.");
+      }
+
+    } catch(InputMismatchException e){
+
+      System.out.println("You cannot enter a string here, what are you doing? Trying to break the game?");
+      System.out.println("Please enter '1', '2', '3' or '4'");
+    }
+*/
+

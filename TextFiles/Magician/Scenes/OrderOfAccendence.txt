@@ -1,0 +1,7 @@
+1 - 'Awakening'. From here we can transition to 'TheMagistrum' or 'WesternSteeps'
+
+2 - 'TheMagistrum' or 'WesternSteeps'. From 'TheMagistrum' we can transition to 'TheNoviceMagesQuarters' or to 'TheCellar'', From 'TheWesternSteeps' we transition to demo complete.
+
+3 - 'TheNoviceMagesQuarter'. From here we can transition to 'TheMagistrum'.
+
+4 - 'TheCellar'. From here we can transition to 'TheMagistrum'.

@@ -1,0 +1,4 @@
+LightOakBoots:0
+LightMahoganyBoots:0
+LightIronBoots:0
+LightSteelBoots:1

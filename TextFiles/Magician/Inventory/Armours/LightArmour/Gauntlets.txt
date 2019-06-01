@@ -1,0 +1,2 @@
+LightIronGauntlets:0
+LightSteelGauntlets:1

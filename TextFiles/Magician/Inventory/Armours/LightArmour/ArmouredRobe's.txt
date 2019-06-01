@@ -1,0 +1,4 @@
+LightOakArmouredRobes:0
+LightMahoganyArmouredRobes:0
+LightIronArmouredRobes:0
+LightSteelArmouredRobes:1

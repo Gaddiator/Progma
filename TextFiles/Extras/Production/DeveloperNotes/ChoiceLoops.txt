@@ -1,0 +1,1 @@
+I need to put the player choices for each scene into a loop so that if they enter a incorrect input they will be told it is incorrect and given the opportunity to choose again.

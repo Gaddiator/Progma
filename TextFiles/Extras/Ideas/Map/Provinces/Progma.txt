@@ -1,0 +1,22 @@
+This is the main province and my original idea for the game, therefore it is the second largest province (Asthcardia being the largest) and will be the starting point for all new players.
+It is one of the most dangerous and hostile provinces with plenty of evils and abominations loose on the land. There are lies and corruption, death and destruction, evils and terror.
+It is currently in the midst of a huge brewing hostility with the possibility of war just around the corner.
+
+Locations:
+
+//Main
+    - Western Steeps, (Magician starting location).
+    - Great Forest, (Warrior starting location).
+    - Progma Jails, (Rouge starting location).
+
+//Secondary
+    - Progma Docks, (For traveling between provinces).
+    - Some Towns, (For buying and selling supplies and resting up, also will have small quests and intractable populations).
+
+//Tertiary
+    - Caves, (There will be many caves spread out across the land to explore. Some hidden, other obvious. Some safe, others dangerous).
+    - Abandoned Houses, (Just to add a bit of diversity, might contain bandits or monsters and usually some loot, if only a few coins).
+    - Abandoned Cabins, (Just to add a bit of diversity, might contain bandits or monsters and usually some loot, if only a few coins).
+    - Abandoned Castles, (There will be a few crumbling castles to explore, many containing deadly enemies, traps and lots of loot).
+    - Dungeons, (Some locations such as cities and a few others will have explorable dungeons with many surprises, just make sure you don't get caught by officials!).
+    - Sewers, (Some locations such as cities and a few others will have explorable sewers with many surprises, just make sure you don't trip!).

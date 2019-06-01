@@ -1,0 +1,11 @@
+You were hurt in the battle however, your wounds are not too serious and you will recover.
+
+You have gained 247 experience points!
+You have gained 3 attribute points toward your strength stat!
+
+All five of the wights now lay dead behind you.
+
+What do you do?
+
+Enter the Magistrum. - (Press 1)
+Loot the wights. - (Press 3)

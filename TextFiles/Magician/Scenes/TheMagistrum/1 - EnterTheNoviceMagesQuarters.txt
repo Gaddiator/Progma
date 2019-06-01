@@ -1,0 +1,17 @@
+Making your way toward the reinforced iron door, you cautiously reach out pushing it open. After a few centimeters is stops abruptly looking down you see a rusted chunky lock.
+Even though the lock isn't in pristine condition its still pretty obvious that your going to have to hit the door with a large amount of force to open it, stepping back you consider your options.
+
+1 - Blast the door off with an air burst. -  //Requires
+                                                  //Spells//ElementalMagic//Air//Airburst\\
+                                                  +        //Skills//ElementalMagic ++ 25\\
+
+2 - Attempt to pick the lock. -  //Requires
+                                      //Attribute//Intelligence ++ 30\\
+                                      +         //Item//Lockpick ++ 1\\
+
+3 - Search for the key. -  //Requires
+                                //Attribute//Willpower ++ 30\\
+                                +    //Attribute//Luck ++ 30\\
+
+4 - Kick the door in. -  //Requires
+                               //Attribute//Strength ++ 45\\

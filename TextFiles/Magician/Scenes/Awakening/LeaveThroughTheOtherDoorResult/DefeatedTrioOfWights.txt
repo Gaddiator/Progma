@@ -1,0 +1,11 @@
+You handled yourself well in that battle, much to the favorable luck that you killed the two hidden wights before you had to face the three through the door.
+
+You have gained 247 experience points!
+You have gained 3 attribute points toward your luck stat!
+
+All three wights now lay dead behind you.
+
+What do you do?
+
+Enter the Magistrum. - (Press 1)
+Loot the wights. - (Press 3)

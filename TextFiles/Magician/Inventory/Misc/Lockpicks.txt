@@ -1,0 +1,4 @@
+RustedIronLockpick:0
+OldIronLockpick:0
+RustedSteelLockpick:0
+OldSteelLockpick:0

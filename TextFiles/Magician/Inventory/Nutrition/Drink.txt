@@ -1,0 +1,9 @@
+Water:0
+Mead:0
+SpicyMead:0
+Rum:0
+SpicyRum:0
+OldGreenTea:0
+FreshGreenTea:0
+StrongWine:0
+MulledWine:0

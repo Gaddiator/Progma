@@ -1,0 +1,19 @@
+I need to create a GUI to let the user alter their starting attribute points at character creation. This will allow the player a bit more freedom and helps for role-playing.
+
+    //Magician
+    - If the character is a magician they will have mostly high magical stats, however they will have a few points to push toward other skills such as combat or stealth if they so which.
+
+    //Warrior
+    - If the character is a warrior they will have mostly high combat stats, however they will have a few points to push toward skills in stealth and combat if they so which.
+      However the warrior cannot use magic (at least not initially) therefore they cannot push points toward magic.
+
+    //Rouge
+    - If the character is a rouge they will have mostly high stealth stats, however they will have a few points to push toward skills in combat and stealth if they so which.
+      However the rouge also cannot use magic (at least not initially) therefore they cannot push points toward magic.
+
+
+    The main reason for this is to allow players to choose what skills they want to major in and therefore determine how they will play the game.
+    I feel as though it adds a critical piece of functionality to the game, and also makes the game more of a personal experience allowing players to role play successfully.
+
+    More thought and time will be assigned to this in the future. There will be balancing and certain conditions to review.
+    Although for now the main functional requirements of the game need the majority of attention and focus of the sole developer that is me.

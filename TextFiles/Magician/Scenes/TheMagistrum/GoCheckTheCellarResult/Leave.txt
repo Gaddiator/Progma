@@ -1,0 +1,6 @@
+You decide that its just too dangerous, if you went down that gloomy hole you'd might not come back. You also know that you need provisions but you'll have to find them elsewhere.
+
+What now?
+
+Enter the novice mage's quarters. - (Press 1)
+Return to the library. - (Press 2)

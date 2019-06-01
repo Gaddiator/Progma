@@ -1,0 +1,9 @@
+HalfLoafOfStaleBread:0
+HalfLoafOfFreshBread:0
+LoafOfStaleBread:0
+LoafOfFreshBread:0
+MediumBagOfRice:0
+SmallBagOfRice:0
+LargeBagOfRice:0
+BlueBerries:0
+RedBerries:0
