@@ -1,0 +1,12 @@
+The sound of running water brings you to your senses. Opening your eyes you take a long look around. From what you can see you seem to be in a forest, and a very large one at that.
+Great trees loom overhead, far out of sight. To your left is a stream which continues into the brush. Wild bushes spouting succulent red berries are dotted around.
+A few large moss covered stones lay in a small clearing ahead of you. Apart from that you see only a few other plants, some flowers, and the nearly knee high grass covering everything.
+You don't remember how you got here. Your stomach grumbles and your parched throat is as dry as the great plains of Ascardia.
+
+What do you do?
+
+
+'Eat some berries' - (press 1)
+'Drink from the stream' - (press 2)
+'Inspect the clearing' - (press 3)
+'Inspect yourself' - (press 4)

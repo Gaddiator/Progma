@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-import static Java.Logic.Utilities.Magician;
-
 public class TheNoviceMagesQuarter {
     public static void main(String[]args) throws IOException {
         first();
@@ -22,7 +20,7 @@ public class TheNoviceMagesQuarter {
     private static Scanner scan = new Scanner(System.in);
 
     public static void first() throws IOException {
-        readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheNoviceMagesQuarter\\SceneDescription.txt");
+        readFromTextFile("TextFiles\\Magician\\Scenes\\TheNoviceMagesQuarter\\SceneDescription.txt");
     }
 
     private static void readFromTextFile(String pathToFile) {

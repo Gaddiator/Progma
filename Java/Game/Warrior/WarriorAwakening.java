@@ -20,7 +20,7 @@ public class  WarriorAwakening {
 
 
         //BufferReader for SceneDescription.txt
-        try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\SceneDescription.txt"))) {
+        try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneDescription.txt"))) {
             String line;
             while ((line = ClassInfoReader.readLine()) != null) {
                 System.out.println(line);
@@ -31,7 +31,7 @@ public class  WarriorAwakening {
 
         //BufferReader for RunAway.txt
         if(UserInput == 1){
-            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\SceneEventResults\\1 - RunAway.txt"))) {
+            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneEventResults\\1 - RunAway.txt"))) {
                 String line;
                 while ((line = ClassInfoReader.readLine()) != null) {
                     System.out.println(line);
@@ -53,7 +53,7 @@ public class  WarriorAwakening {
 
         //BufferReader for ShoutForHelp.txt
         else if(UserInput == 2){
-            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\SceneEventResults\\2 - ShoutForHelp.txt"))) {
+            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneEventResults\\2 - ShoutForHelp.txt"))) {
                 String line;
                 while ((line = ClassInfoReader.readLine()) != null) {
                     System.out.println(line);
@@ -73,7 +73,7 @@ public class  WarriorAwakening {
             }
         }
         else if(UserInput == 3){
-            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\SceneEventResults\\3 - DrawYourSword.txt"))) {
+            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneEventResults\\3 - DrawYourSword.txt"))) {
                 String line;
                 while ((line = ClassInfoReader.readLine()) != null) {
                     System.out.println(line);
@@ -84,7 +84,7 @@ public class  WarriorAwakening {
 
         //BufferReader for ChargeTheBeast.txt
         else if(UserInput == 4){
-            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\SceneEventResults\\4 - ChargeTheBeast.txt"))) {
+            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneEventResults\\4 - ChargeTheBeast.txt"))) {
                 String line;
                 while ((line = ClassInfoReader.readLine()) != null) {
                     System.out.println(line);
@@ -126,7 +126,7 @@ public class  WarriorAwakening {
 
         //BufferReader for JumpToTheLeft.txt
         if(UserInput == 1){
-            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\ChargeBeastOutcome\\1 - JumpToTheLeft.txt"))) {
+            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\ChargeBeastOutcome\\1 - JumpToTheLeft.txt"))) {
                 String line;
                 while ((line = ClassInfoReader.readLine()) != null) {
                     System.out.println(line);
@@ -147,7 +147,7 @@ public class  WarriorAwakening {
 
         //BufferReader for RoarAtTheBeast.txt
         else if(UserInput == 2){
-            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\SceneEventResults\\2 - RoarAtTheBeast.txt"))) {
+            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneEventResults\\2 - RoarAtTheBeast.txt"))) {
                 String line;
                 while ((line = ClassInfoReader.readLine()) != null) {
                     System.out.println(line);
@@ -168,7 +168,7 @@ public class  WarriorAwakening {
 
         //BufferReader for DropToTheFloor.txt
         else if(UserInput == 3){
-            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\SceneEventResults\\3 - DropToTheFloor.txt"))) {
+            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneEventResults\\3 - DropToTheFloor.txt"))) {
                 String line;
                 while ((line = ClassInfoReader.readLine()) != null) {
                     System.out.println(line);
@@ -179,7 +179,7 @@ public class  WarriorAwakening {
 
         //BufferReader for DrawYourSword.txt
         else if(UserInput == 4){
-            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Warrior\\Awakening\\SceneEventResults\\4 - DrawYourSword.txt"))) {
+            try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneEventResults\\4 - DrawYourSword.txt"))) {
                 String line;
                 while ((line = ClassInfoReader.readLine()) != null) {
                     System.out.println(line);

@@ -20,7 +20,7 @@ public class RougeAwakening {
     public static void first () throws IOException {
 
         //BufferReader for SceneDescription.txt
-        try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Magician\\Awakening\\SceneDescription.txt"))) {
+        try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Magician\\Awakening\\SceneDescription.txt"))) {
             String line;
             while ((line = ClassInfoReader.readLine()) != null) {
                 System.out.println(line);
@@ -33,7 +33,7 @@ public class RougeAwakening {
 
             //BufferReader for SummonMagicalLightResult.txt
             if (UserInput == 1) {
-                try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Magician\\Awakening\\SceneEventResults\\1 - SummonMagicalLightResult.txt"))) {
+                try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Magician\\Awakening\\SceneEventResults\\1 - SummonMagicalLightResult.txt"))) {
                     String line;
                     while ((line = ClassInfoReader.readLine()) != null) {
                         System.out.println(line);
@@ -46,7 +46,7 @@ public class RougeAwakening {
 
             //BufferReader for LeaveThroughTheMainDoorResult.txt
             else if (UserInput == 2) {
-                try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Magician\\Awakening\\SceneEventResults\\2 - LeaveThroughTheMainDoor.txt"))) {
+                try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Magician\\Awakening\\SceneEventResults\\2 - LeaveThroughTheMainDoor.txt"))) {
                     String line;
                     while ((line = ClassInfoReader.readLine()) != null) {
                         System.out.println(line);
@@ -64,7 +64,7 @@ public class RougeAwakening {
 
             //BufferReader for CastDetectLifeSpellResult.txt
             else if (UserInput == 4) {
-                try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("src\\TextFiles\\Magician\\Awakening\\SceneEventResults\\4 - CastDetectLifeSpellResult.txt"))) {
+                try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Magician\\Awakening\\SceneEventResults\\4 - CastDetectLifeSpellResult.txt"))) {
                     String line;
                     while ((line = ClassInfoReader.readLine()) != null) {
                         System.out.println(line);

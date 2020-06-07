@@ -1,1 +1,1 @@
-ManipulateLight:0
+ManipulateLight:1

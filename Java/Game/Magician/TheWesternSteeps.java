@@ -10,7 +10,7 @@ public class TheWesternSteeps {
     }
 
     public static void first() {
-        readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheWesternSteeps\\EndDemo.txt");
+        readFromTextFile("TextFiles\\Magician\\Scenes\\TheWesternSteeps\\EndDemo.txt");
     }
 
     private static void readFromTextFile(String pathToFile) {

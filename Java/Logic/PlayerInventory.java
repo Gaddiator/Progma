@@ -8,7 +8,7 @@ public class PlayerInventory {
     public static int getPlayerGold(){
         int Gold = 0;
 
-        try (BufferedReader SilverReader = new BufferedReader(new FileReader("src\\TextFiles\\Magician\\Inventory\\Currency\\GoldAndSilver.txt"))) {
+        try (BufferedReader SilverReader = new BufferedReader(new FileReader("TextFiles\\Magician\\Inventory\\Currency\\GoldAndSilver.txt"))) {
             String line;
             while ((line = SilverReader.readLine()) != null) {
                 if (line.charAt(5) == (int) line.charAt(5)) {
@@ -34,7 +34,7 @@ public class PlayerInventory {
 /*//    public static int getPlayerSilver(){
 //        int Silver = 0;
 //
-//        try (BufferedReader SilverReader = new BufferedReader(new FileReader("src\\TextFiles\\Magician\\Inventory\\Currency\\GoldAndSilver.txt"))) {
+//        try (BufferedReader SilverReader = new BufferedReader(new FileReader("TextFiles\\Magician\\Inventory\\Currency\\GoldAndSilver.txt"))) {
 //            String line;
 //            while ((line = SilverReader.readLine()) != null) {
 //                if (line.charAt(5) == (int) line.charAt(5) && line.charAt(6) != (int) line.charAt(6)) {
@@ -94,7 +94,7 @@ public class PlayerInventory {
         try {
             String items = "LightOakArmouredRobes:" + loar + "\nLightMahoganyArmouredRobes:" + lmar + "\nLightIronArmouredRobes:" + liar + "\nLightSteelArmouredRobes:" + lsar;
 
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Armours\\LightArmour\\ArmouredRobe's.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Armours\\LightArmour\\ArmouredRobe's.txt");
             bw = new BufferedWriter(fw);
             bw.write(items);
         } catch (IOException e) {
@@ -145,7 +145,7 @@ public class PlayerInventory {
         try {
             String items = "LightOakBoots:" + lob + "\nLightMahoganyBoots:" + lmb + "\nLightIronBoots:" + lib + "\nLightSteelBoots:" + lsb;
 
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Armours\\LightArmour\\Boot's.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Armours\\LightArmour\\Boot's.txt");
             bw = new BufferedWriter(fw);
             bw.write(items);
         } catch (IOException e) {
@@ -185,7 +185,7 @@ public class PlayerInventory {
         try {
             String items = "LightIronGauntlets:" + lig + "\nLightSteelGauntlets:" + lsg;
 
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Armours\\LightArmour\\Gauntlets.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Armours\\LightArmour\\Gauntlets.txt");
             bw = new BufferedWriter(fw);
             bw.write(items);
         } catch (IOException e) {
@@ -235,7 +235,7 @@ public class PlayerInventory {
         try {
             String items = "FlexibleMediumLeatherArmour:" + fmla + "\nToughMediumLeatherArmour:" + tmla + "\nFlexibleMediumFurArmour:" + fmfa + "\nToughMediumFurArmour:" + tmfa;
 
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Armours\\MediumArmour\\Jerkin's.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Armours\\MediumArmour\\Jerkin's.txt");
             bw = new BufferedWriter(fw);
             bw.write(items);
         } catch (IOException e) {
@@ -285,7 +285,7 @@ public class PlayerInventory {
         try {
             String items = "HeavyIronPlate:" + hip + "\nHeavySteelPlate:" + hsp + "\nHeavyIronChain:" + hic + "\nHeavySteelChain:" + hsc;
 
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Armours\\HeavyArmour\\ChestPlate's.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Armours\\HeavyArmour\\ChestPlate's.txt");
             bw = new BufferedWriter(fw);
             bw.write(items);
         } catch (IOException e) {
@@ -328,7 +328,7 @@ public class PlayerInventory {
 
         try {
             String content = "Rupture:" + rupture + "\nImplode:" + implode;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\DarkMagic.txt\\OffensiveMagic.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\DarkMagic\\OffensiveMagic.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -346,7 +346,7 @@ public class PlayerInventory {
 
         try {
             String content = "ShadowBlast:" + shadowBlast;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\DarkMagic.txt\\ShadowMagic.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\DarkMagic\\ShadowMagic.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -383,7 +383,7 @@ public class PlayerInventory {
 
         try {
             String content = "DrainLife:" + drainLife;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\DeathMagic\\LeechMagic.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\DeathMagic\\LeechMagic.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -401,7 +401,7 @@ public class PlayerInventory {
 
         try {
             String content = "ResurrectBoneWarrior:" + resurrectBoneWarrior;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\DeathMagic\\ResurrectionMagic.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\DeathMagic\\ResurrectionMagic.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -474,7 +474,7 @@ public class PlayerInventory {
 
         try {
             String content = "Airburst:" + airburst + "\nDetectMovement:" + detectMovement;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\ElementalMagic\\Air.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\ElementalMagic\\Air.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -492,7 +492,7 @@ public class PlayerInventory {
 
         try {
             String content = "RockBlast:" + rockBlast + "\nRockWall:" + rockWall;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\ElementalMagic\\Earth.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\ElementalMagic\\Earth.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -509,7 +509,7 @@ public class PlayerInventory {
         }
         try {
             String content = "Fireball:" + fireball + "\nIncinerate:" + incinerate;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\ElementalMagic\\Fire.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\ElementalMagic\\Fire.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -527,7 +527,7 @@ public class PlayerInventory {
 
         try {
             String content = "IceCone:" + iceCone + "\nFreeze:" + freeze;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\ElementalMagic\\Water.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\ElementalMagic\\Water.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -589,7 +589,7 @@ public class PlayerInventory {
 
         try {
             String content = "ElectricityShield:" + electricityShield + "\nEnergyShield:" + energyShield;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\SpellCasting\\DefensiveMagic.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\SpellCasting\\DefensiveMagic.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -607,7 +607,7 @@ public class PlayerInventory {
 
         try {
             String content = "DetectLife:" + detectLife + "\nDetectDeath:" + detectDeath;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\SpellCasting\\DetectionMagic.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\SpellCasting\\DetectionMagic.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -625,7 +625,7 @@ public class PlayerInventory {
 
         try {
             String content = "ManipulateLight:" + manipulateLight;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\SpellCasting\\EnergyManipulationMagic.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\SpellCasting\\EnergyManipulationMagic.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -643,7 +643,7 @@ public class PlayerInventory {
 
         try {
             String content = "TransmuteLiquidToAcid:" + transmuteLiquidToAcid;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Spells\\SpellCasting\\TransmutationMagic.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Spells\\SpellCasting\\TransmutationMagic.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -680,8 +680,8 @@ public class PlayerInventory {
 
 
         try {
-            String content = "Iron Shortsword:" + ironShortsword + "\nSteel Shortsword:" + steelShortsword;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Weapons\\OneHanded\\ShortSwords.txt");
+            String content = "Iron Short Sword:" + ironShortsword + "\nSteel Short Sword:" + steelShortsword;
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Weapons\\OneHanded\\ShortSwords.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -750,7 +750,7 @@ public class PlayerInventory {
 
         try {
             String content = "IronDagger:" + ironDagger+ "\nSteelDagger:" + steelDagger;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Weapons\\OneHanded\\Daggers.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Weapons\\OneHanded\\Daggers.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {
@@ -781,7 +781,7 @@ public class PlayerInventory {
 
         try {
             String content = "IronDagger:" + aCompleteIntroductionToElementalMagic;
-            fw = new FileWriter("src\\TextFiles\\Magician\\Inventory\\Books\\MagicBooks.txt");
+            fw = new FileWriter("TextFiles\\Magician\\Inventory\\Books\\MagicBooks.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {

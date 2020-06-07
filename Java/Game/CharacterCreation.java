@@ -17,7 +17,6 @@ public class CharacterCreation {
     private static int i = 0;
     private static int j;
 
-
     public static void main(String[]arg){
         Initialize();
     }
@@ -26,7 +25,7 @@ public class CharacterCreation {
 
         //Declaring Scanners
         Scanner scan = new Scanner(System.in);
-        readFromTextFile("src\\TextFiles\\intro.txt");
+        readFromTextFile("TextFiles\\intro.txt");
 
         System.out.println("\nPlease enter your name.");
         playerName = scan.next();
@@ -50,7 +49,7 @@ public class CharacterCreation {
 
             if (userInput.equalsIgnoreCase("Warrior")) {
                 System.out.println();
-                readFromTextFile("src\\TextFiles\\Info\\ClassInfo\\Warrior.txt");
+                readFromTextFile("TextFiles\\Info\\ClassInfo\\Warrior.txt");
 
                 try {
                     while (j == 0) {
@@ -93,7 +92,7 @@ public class CharacterCreation {
 
             else if (userInput.equalsIgnoreCase("Rouge")) {
                 System.out.println();
-                readFromTextFile("src\\TextFiles\\Info\\ClassInfo\\Rouge.txt");
+                readFromTextFile("TextFiles\\Info\\ClassInfo\\Rouge.txt");
 
                 try {
                     while (j == 0) {
@@ -136,7 +135,7 @@ public class CharacterCreation {
 
             else if (userInput.equalsIgnoreCase("Magician")) {
                 System.out.println();
-                readFromTextFile("src\\TextFiles\\Info\\ClassInfo\\Magician.txt");
+                readFromTextFile("TextFiles\\Info\\ClassInfo\\Magician.txt");
 
                 try {
                     while (j == 0) {
@@ -174,6 +173,7 @@ public class CharacterCreation {
             }
         }
     }
+
     private static void savePlayerInfo() {
         BufferedWriter bw = null;
         FileWriter fw = null;
@@ -181,7 +181,7 @@ public class CharacterCreation {
         try {
             String content = playerName + "\n" + playerClass;
 
-            fw = new FileWriter("src\\TextFiles\\Info\\PlayerInfo\\misc.txt");
+            fw = new FileWriter("TextFiles\\Info\\PlayerInfo\\misc.txt");
             bw = new BufferedWriter(fw);
             bw.write(content);
         } catch (IOException e) {

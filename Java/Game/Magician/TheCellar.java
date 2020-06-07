@@ -1,30 +1,31 @@
 package Java.Game.Magician;
 
-import Java.Logic.Utilities;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class TheCellar {
+    private static Scanner scan = new Scanner(System.in);
+    private static int UserInput;
 
     public static void main(String[]args) throws IOException{
         first();
     }
 
     public static void first() throws IOException {
-        readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\SceneDescription.txt");
+        readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\SceneDescription.txt");
 
         int i = 0;
         while(i == 0){
-            Utilities.UserInput = Utilities.scan.nextInt();
+            UserInput = scan.nextInt();
 
-            if (Utilities.UserInput == 1) {
-                readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\1 - SummonAMagicalLight.txt");
+            if (UserInput == 1) {
+                readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\1 - SummonAMagicalLight.txt");
                 i++;
                 SummonAMagicalLightResult();
-            } else if (Utilities.UserInput == 2) {
-                readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\2 - CastAFireballForLight.txt");
+            } else if (UserInput == 2) {
+                readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\2 - CastAFireballForLight.txt");
                 i++;
                 CastAFireballForLightResult();
             } else {
@@ -35,17 +36,16 @@ public class TheCellar {
     }
 
     public static void SummonAMagicalLightResult() throws IOException{
-
         int i = 0;
         while(i == 0) {
-            Utilities.UserInput = Utilities.scan.nextInt();
+            UserInput = scan.nextInt();
 
-            if (Utilities.UserInput == 1) {
-                readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\CastALightSpellResult\\1 - GrabTheBackpack.txt");
-            } else if (Utilities.UserInput == 2) {
-                readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\CastALightSpellResult\\2 - LootTheArea.txt");
-            } else if (Utilities.UserInput == 3) {
-                readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\CastALightSpellResult\\3 - LeaveTheCellar.txt");
+            if (UserInput == 1) {
+                readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\CastALightSpellResult\\1 - GrabTheBackpack.txt");
+            } else if (UserInput == 2) {
+                readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\CastALightSpellResult\\2 - LootTheArea.txt");
+            } else if (UserInput == 3) {
+                readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\CastALightSpellResult\\3 - LeaveTheCellar.txt");
             } else {
                 System.out.println("Invalid entry");
                 System.out.println("Please enter '1', '2' or '3'.");
@@ -57,14 +57,14 @@ public class TheCellar {
 
         int i = 0;
         while(i == 0) {
-            Utilities.UserInput = Utilities.scan.nextInt();
+            UserInput = scan.nextInt();
 
-            if (Utilities.UserInput == 1) {
-                readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\CastAFireballForLightResult\\1 - GrabTheBackpack.txt");
-            } else if (Utilities.UserInput == 2) {
-                readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\CastAFireballForLightResult\\2 - LootTheArea.txt");
-            } else if (Utilities.UserInput == 3) {
-                readFromTextFile("src\\TextFiles\\Magician\\Scenes\\TheCellar\\CastAFireballForLightResult\\3 - LeaveTheCellar.txt");
+            if (UserInput == 1) {
+                readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\CastAFireballForLightResult\\1 - GrabTheBackpack.txt");
+            } else if (UserInput == 2) {
+                readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\CastAFireballForLightResult\\2 - LootTheArea.txt");
+            } else if (UserInput == 3) {
+                readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\CastAFireballForLightResult\\3 - LeaveTheCellar.txt");
             } else {
                 System.out.println("Invalid entry");
                 System.out.println("Please enter '1', '2' or '3'.");

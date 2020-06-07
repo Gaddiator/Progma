@@ -1,2 +1,2 @@
-Fireball:0
+Fireball:1
 Incinerate:0

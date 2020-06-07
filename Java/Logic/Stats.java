@@ -5,10 +5,10 @@ package Java.Logic;
 public class Stats {
 
     //Location of txt files holding information of player and enemy stats.
-    public static String PlayerStats = "src//TextFiles//Magician//Stats//PlayerStats.txt";
-    public static String TrioOfWightsStats = "src//TextFiles//Magician//EnemyStats//Bane.txt";
-    public static String GroupOfWightsStats = "src//TextFiles//Magician//EnemyStats//GroupOfWightsStats.txt";
-    public static String BaneStats = "src//TextFiles//Magician//EnemyStats//TrioOfWights.txt";
+    public static String PlayerStats = "TextFiles//Magician//Stats//PlayerStats.txt";
+    public static String TrioOfWightsStats = "TextFiles//Magician//EnemyStats//Bane.txt";
+    public static String GroupOfWightsStats = "TextFiles//Magician//EnemyStats//GroupOfWightsStats.txt";
+    public static String BaneStats = "TextFiles//Magician//EnemyStats//TrioOfWights.txt";
 
     //Player Level
     public static int attributePoints = 0;

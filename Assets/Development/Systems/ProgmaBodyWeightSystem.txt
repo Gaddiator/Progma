@@ -1,0 +1,8 @@
+Firstly create a body weight system in kilo grams for the player to enter at character creation/selection. 
+Next, using a reputation system slightly nudge the npc's liking of a player up or down depending on their body weight.
+
+For example if the player was of a higher body weight e.g 90kg he would be easier to interact with mercants and nobility, traders, common people, etc.
+
+For this to work properly another factor would need to be implemented. 
+This factor would need to calculate the players state of overall fitness based on things such as body composition, diet, physical exercise etc.
+For example, fit, healthy, average, poor, soft, etc.

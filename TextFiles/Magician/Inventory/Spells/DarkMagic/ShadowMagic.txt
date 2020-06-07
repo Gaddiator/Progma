@@ -1,1 +1,1 @@
-ShadowBlast:0
+ShadowBlast:1
