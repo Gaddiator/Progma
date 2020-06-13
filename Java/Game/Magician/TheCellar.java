@@ -18,6 +18,7 @@ public class TheCellar {
 
         int i = 0;
         while(i == 0){
+            scan.nextLine();
             UserInput = scan.nextInt();
 
             if (UserInput == 1) {
@@ -36,8 +37,8 @@ public class TheCellar {
     }
 
     public static void SummonAMagicalLightResult() throws IOException{
-        int i = 0;
-        while(i == 0) {
+        while(true) {
+            scan.nextLine();
             UserInput = scan.nextInt();
 
             if (UserInput == 1) {
@@ -55,8 +56,9 @@ public class TheCellar {
 
     public static void CastAFireballForLightResult() throws IOException{
 
-        int i = 0;
-        while(i == 0) {
+
+        while(true) {
+            scan.nextLine();
             UserInput = scan.nextInt();
 
             if (UserInput == 1) {

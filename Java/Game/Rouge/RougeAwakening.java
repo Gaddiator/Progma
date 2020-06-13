@@ -28,7 +28,7 @@ public class RougeAwakening {
         }
         int i = 0;
         while (i == 0) {
-
+            scan.nextLine();
             UserInput = scan.nextInt();
 
             //BufferReader for SummonMagicalLightResult.txt
@@ -40,7 +40,7 @@ public class RougeAwakening {
                     }
                 }
 //                PlayerInventory.ManipulateLight = true;
-                //SummonMagicalLightResult();
+//                SummonMagicalLightResult();
                 i++;
             }
 

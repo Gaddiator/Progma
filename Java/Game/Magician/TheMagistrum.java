@@ -114,6 +114,7 @@ public class TheMagistrum {
         System.out.println("Your health is " + CurrentHealth + "/" + PlayerStats.get(0));
         Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
 
+        scan.nextLine();
         userInput = scan.nextInt();
 
         if (userInput == 1) {
@@ -126,6 +127,7 @@ public class TheMagistrum {
 
             try {
                 while(true) {
+                    scan.nextLine();
                     userInput = scan.nextInt();
                     if (userInput == 1) {
                         TheCellar.first();

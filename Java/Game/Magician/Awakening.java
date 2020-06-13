@@ -48,7 +48,8 @@ public class Awakening {
         //Scene description.
         readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneDescription.txt");
 
-        while (true) {
+        boolean loop = true;
+        while (loop) {
             try {
                 userInput = scan.nextInt();
                 if (userInput == 1) {
@@ -58,11 +59,17 @@ public class Awakening {
                     //Adding spells to players inventory.
                     PlayerInventory.setSpellCastingMagic(false, false, false, false, true, false);
 
+                    //Terminating
+                    loop = false;
+
                     //Summon magical light.
                     SummonMagicalLightOutcome();
                 } else if (userInput == 2) {
                     //Leave through the main door.
                     readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\2 - LeaveThroughTheMainDoor.txt");
+
+                    //Terminating
+                    loop = false;
 
                     //Leave through the main door.
                     LeaveThroughTheMainDoorOutcome();
@@ -75,6 +82,9 @@ public class Awakening {
                         //Leave Through The Other Door Two.
                         readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\3 - LeaveThroughTheOtherDoor2.txt");
                     }
+
+                    //Terminating
+                    loop = false;
 
                     //Leave through the other door.
                     LeaveThroughTheOtherDoorOutcome();
@@ -89,6 +99,9 @@ public class Awakening {
                     //Increasing player skills.
                     PlayerSkills.ElementalMagic++;
                     PlayerSkills.SpellCasting++;
+
+                    //Terminating
+                    loop = false;
 
                     //Cast detect life spell.
                     CastDetectLifeSpellOutcome();
@@ -107,7 +120,8 @@ public class Awakening {
 
     @SuppressWarnings("Duplicates")
     private static void SummonMagicalLightOutcome() throws IOException {
-        while (true) {
+        boolean loop = true;
+        while (loop) {
             try {
                 userInput = scan.nextInt();
                 if (userInput == 1) {
@@ -119,13 +133,23 @@ public class Awakening {
                     PlayerSkills.SpellCasting++;
                     WightBattleSceneControl++;
 
-                    while (true) {
+                    boolean looping = true;
+                    while (looping) {
+                        System.out.println("\n\n SummonMagicalLightOutcome - Inner Loop \n\n");
                         try {
                             userInput = scan.nextInt();
                             if (userInput == 1) {
+                                //Terminating.
+                                looping = false;
+                                loop = false;
+
                                 //Leave through the main door.
                                 LeaveThroughTheMainDoorOutcome();
                             } else if (userInput == 2) {
+                                //Terminating.
+                                looping = false;
+                                loop = false;
+
                                 //Leave through the other door.
                                 LeaveThroughTheOtherDoorOutcome();
                             } else {
@@ -150,13 +174,22 @@ public class Awakening {
                     PlayerSkills.ElementalMagic++;
                     WightBattleSceneControl++;
 
-                    while (true) {
+                    boolean looping = true;
+                    while (looping) {
                         try {
                             userInput = scan.nextInt();
                             if (userInput == 1) {
+                                //Terminating.
+                                looping = false;
+                                loop = false;
+
                                 //The western steeps.
                                 TheWesternSteeps.first();
                             } else if (userInput == 2) {
+                                //Terminating.
+                                looping = false;
+                                loop = false;
+
                                 //Leave through the other door.
                                 LeaveThroughTheOtherDoorOutcome();
                             } else {
@@ -174,13 +207,22 @@ public class Awakening {
                     //Turn and run.
                     readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SummonMagicalLightResult\\3 - TurnAndRun.txt");
 
-                    while (true) {
+                    boolean looping = true;
+                    while (looping) {
                         try {
                             userInput = scan.nextInt();
                             if (userInput == 1) {
+                                //Terminating.
+                                looping = false;
+                                loop = false;
+
                                 //First.
                                 first();
                             } else if (userInput == 2) {
+                                //Terminating.
+                                looping = false;
+                                loop = false;
+
                                 //Exit.
                                 System.exit(0);
                             } else {
@@ -202,13 +244,22 @@ public class Awakening {
                     PlayerSkills.DarkMagic++;
                     PlayerSkills.ElementalMagic++;
 
-                    while (true) {
+                    boolean looping = true;
+                    while (looping) {
                         try {
                             userInput = scan.nextInt();
                             if (userInput == 1) {
+                                //Terminating.
+                                looping = false;
+                                loop = false;
+
                                 //The western steeps.
                                 TheWesternSteeps.first();
                             } else if (userInput == 2) {
+                                //Terminating.
+                                looping = false;
+                                loop = false;
+
                                 //Leave through the other door.
                                 LeaveThroughTheOtherDoorOutcome();
                             } else {
@@ -242,7 +293,8 @@ public class Awakening {
             TheWesternSteeps.first();
         }
 
-        while (true) {
+        boolean loop = true;
+        while (loop) {
             try {
                 userInput = scan.nextInt();
                 if (userInput == 1) {
@@ -254,6 +306,9 @@ public class Awakening {
 
                     //Increasing player skills.
                     PlayerSkills.ElementalMagic++;
+
+                    //Terminating.
+                    loop = false;
 
                     //The western steeps.
                     TheWesternSteeps.first();
@@ -283,6 +338,9 @@ public class Awakening {
                     PlayerSkills.ElementalMagic++;
                     PlayerSkills.SpellCasting++;
 
+                    //Terminating.
+                    loop = false;
+
                     //The western steeps.
                     TheWesternSteeps.first();
                 } else if (userInput == 3) {
@@ -294,6 +352,9 @@ public class Awakening {
 
                     //Increasing player skills.
                     PlayerSkills.DarkMagic++;
+
+                    //Terminating.
+                    loop = false;
 
                     //The western steeps.
                     TheWesternSteeps.first();
@@ -307,6 +368,9 @@ public class Awakening {
                     //Increasing player skills.
                     PlayerSkills.SpellCasting++;
                     PlayerSkills.DarkMagic++;
+
+                    //Terminating.
+                    loop = false;
 
                     //The western steeps.
                     TheWesternSteeps.first();
@@ -325,6 +389,7 @@ public class Awakening {
 
     @SuppressWarnings("Duplicates")
     private static void LeaveThroughTheOtherDoorOutcome() throws IOException {
+        System.out.println("\n'1'\n");
         //Handling outcome
         if (WightBattleSceneControl == 0) {
             //Leave through the other door one.
@@ -368,13 +433,18 @@ public class Awakening {
         int x = 0;
         boolean isEnemyAlive = true;
 
-        while (true) {
-            System.out.println("Continue... - (Press 1)");
+        System.out.println("Continue... - (Press 1)");
+
+        boolean loop = true;
+        while (loop) {
             userInput = scan.nextInt();
+            System.out.println("\n'1'\n");
             try {
                 if (userInput == 1) {
-
-                    while (true) {
+                    System.out.println("\n'2'\n");
+                    boolean looping = true;
+                    while (looping) {
+                        System.out.println("\n'3'\n");
                         //Player turn
                         int PlayerTurnDamage = (int) (Math.random() * MaxMagicalAttackDamage + MinMagicalAttackDamage) - (EnemyMagicalDefense);
                         if (x == 0) {
@@ -395,13 +465,28 @@ public class Awakening {
                         if (isEnemyAlive) {
                             System.out.println("The Wights attacks you for " + EnemyTurnDamage + " Health");
                             CurrentHealth = CurrentHealth - EnemyTurnDamage;
+                        } else {
+                            System.out.println("The Wights died!");
                         }
 
                         if (EnemyCurrentHealth <= 0) {
+                            //Updating Player Stats.
                             Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
+
+                            //Terminating.
+                            looping = false;
+                            loop = false;
+
                             playerVictory();
                         } else if (CurrentHealth <= 0) {
+                            //Br
                             System.out.println();
+
+                            //Terminating.
+                            looping = false;
+                            loop = false;
+
+                            //enemyVictory();
                             enemyVictory();
                         }
                         try {
@@ -411,13 +496,16 @@ public class Awakening {
                         }
                     }
                 } else {
+                    System.out.println("\n'Invalid Number'\n");
+                    System.out.println("\n'1'\n");
                     System.out.println("Invalid entry!");
-                    System.out.println("Please enter '1', '2', '3' or '4'.");
+                    System.out.println("Please enter '1' to continue.");
                     scan.nextLine();
                 }
             } catch (InputMismatchException e) {
+                System.out.println("\n'Input Mistmatch'\n");
                 System.out.println("Invalid entry!");
-                System.out.println("Please enter '1', '2', '3' or '4'.");
+                System.out.println("Please enter '1' to continue.");
                 scan.nextLine();
             }
         }
@@ -435,6 +523,7 @@ public class Awakening {
 
                         try {
                             while (true) {
+                                scan.nextLine();
                                 userInput = scan.nextInt();
                                 if (userInput == 1) {
                                     first();
@@ -488,7 +577,6 @@ public class Awakening {
                                 }
                             }
                         } catch (InputMismatchException e) {
-                            scan.nextLine();
                             System.out.println("Invalid entry");
                             System.out.println("Please enter '1' or '2'.");
                             scan.next();
@@ -528,6 +616,7 @@ public class Awakening {
                     } else {
                         System.out.println("Invalid entry");
                         System.out.println("Please enter '1', '2' or '3'!");
+                        scan.next();
                     }
                 }
             } catch (InputMismatchException e) {
@@ -545,7 +634,6 @@ public class Awakening {
         int i;
         i = rand.nextInt((3 - 1) + 1) + 1;
 
-        //Clean start
         //Defeated Group Of Wights
         if (WightBattleSceneControl == 0) {
             if (i == 1) {
@@ -558,6 +646,7 @@ public class Awakening {
 
                 try {
                     while (true) {
+                        scan.nextLine();
                         userInput = scan.nextInt();
                         if (userInput == 1) {
                             Java.Game.Magician.TheMagistrum.first();
@@ -584,6 +673,7 @@ public class Awakening {
 
                 try {
                     while (true) {
+                        scan.nextLine();
                         userInput = scan.nextInt();
                         if (userInput == 1) {
                             Java.Game.Magician.TheMagistrum.first();
@@ -605,6 +695,7 @@ public class Awakening {
                 readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\LootTheWightsResult\\DefeatedGroupOfWightsLoot\\3 - LootTheWights3.txt");
                 try {
                     while (true) {
+                        scan.nextLine();
                         userInput = scan.nextInt();
                         if (userInput == 1) {
                             Java.Game.Magician.TheMagistrum.first();
@@ -623,7 +714,6 @@ public class Awakening {
                 }
             }
         }
-        //Clean end.
 
         //Defeated Trio Of Wights
         if (WightBattleSceneControl == 1) {
@@ -637,6 +727,7 @@ public class Awakening {
 
                 try {
                     while (true) {
+                        scan.nextLine();
                         userInput = scan.nextInt();
                         if (userInput == 1) {
                             Java.Game.Magician.TheMagistrum.first();
@@ -663,6 +754,7 @@ public class Awakening {
 
                 try {
                     while (true) {
+                        scan.nextLine();
                         userInput = scan.nextInt();
                         if (userInput == 1) {
                             Java.Game.Magician.TheMagistrum.first();
@@ -685,6 +777,7 @@ public class Awakening {
 
                 try {
                     while (true) {
+                        scan.nextLine();
                         userInput = scan.nextInt();
                         if (userInput == 1) {
                             Java.Game.Magician.TheMagistrum.first();
@@ -722,6 +815,7 @@ public class Awakening {
 
         while (true) {
             try {
+                scan.nextLine();
                 userInput = scan.nextInt();
                 if (userInput == 1) {
                     //Enter The Magistrum.
@@ -756,6 +850,7 @@ public class Awakening {
 
         while (true) {
             try {
+                scan.nextLine();
                 userInput = scan.nextInt();
                 if (userInput == 1) {
                     try {

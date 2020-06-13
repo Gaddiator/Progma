@@ -1,2 +1,2 @@
-Airburst:0
+Airburst:1
 DetectMovement:0
