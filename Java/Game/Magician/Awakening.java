@@ -45,8 +45,30 @@ public class Awakening {
     }
 
     public static void first() throws IOException {
-        //Scene description.
-        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneDescription.txt");
+        //Scene Description Part 1
+        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneDescription1.txt");
+        boolean iterate = true;
+        while (iterate) {
+            try {
+                userInput = scan.nextInt();
+                if(userInput == 1){
+                    //Clearing terminal.
+                    clearTerminal();
+
+                    //Scene description Part 2.
+                    readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneDescription2.txt");
+                } else {
+                    System.out.println("Invalid entry!");
+                    System.out.println("Please enter '1' to continue.");
+                    scan.nextLine();
+                }
+            }
+            catch(InputMismatchException e) {
+                System.out.println("Invalid entry!");
+                System.out.println("Please enter '1' to continue.");
+                scan.nextLine();
+            }
+        }
 
         boolean loop = true;
         while (loop) {
@@ -877,5 +899,10 @@ public class Awakening {
         } catch (IOException e) {
             System.out.println("Error file not found\n" + e);
         }
+    }
+
+    public static void clearTerminal() {
+        System. out. print("\033[H\033[2J");
+        System. out. flush();
     }
 }

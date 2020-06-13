@@ -19,8 +19,8 @@ public class  WarriorAwakening {
         int UserInput;
 
 
-        //BufferReader for SceneDescription.txt
-        try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneDescription.txt"))) {
+        //BufferReader for SceneDescription1.txt
+        try (BufferedReader ClassInfoReader = new BufferedReader(new FileReader("TextFiles\\Warrior\\Awakening\\SceneDescription1.txt"))) {
             String line;
             while ((line = ClassInfoReader.readLine()) != null) {
                 System.out.println(line);

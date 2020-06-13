@@ -1,5 +1,5 @@
 40 - Max Health
-3 - Current Health
+5 - Current Health
 25 - Intelligence
 25 - Personality
 30 - Willpower

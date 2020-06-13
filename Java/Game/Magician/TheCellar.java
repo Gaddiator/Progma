@@ -14,7 +14,7 @@ public class TheCellar {
     }
 
     public static void first() throws IOException {
-        readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\SceneDescription.txt");
+        readFromTextFile("TextFiles\\Magician\\Scenes\\TheCellar\\SceneDescription1.txt");
 
         int i = 0;
         while(i == 0){

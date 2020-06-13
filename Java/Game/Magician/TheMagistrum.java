@@ -40,7 +40,7 @@ public class TheMagistrum {
     @SuppressWarnings("Duplicates")
     public static void first() throws IOException {
         //Scene Description.
-        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\SceneDescription.txt");
+        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\SceneDescription1.txt");
 
         try {
             while (true) {

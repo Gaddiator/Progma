@@ -20,7 +20,7 @@ public class TheNoviceMagesQuarter {
     private static Scanner scan = new Scanner(System.in);
 
     public static void first() throws IOException {
-        readFromTextFile("TextFiles\\Magician\\Scenes\\TheNoviceMagesQuarter\\SceneDescription.txt");
+        readFromTextFile("TextFiles\\Magician\\Scenes\\TheNoviceMagesQuarter\\SceneDescription1.txt");
     }
 
     private static void readFromTextFile(String pathToFile) {
