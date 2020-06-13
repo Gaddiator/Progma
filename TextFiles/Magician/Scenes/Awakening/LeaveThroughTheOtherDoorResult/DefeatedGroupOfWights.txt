@@ -12,4 +12,4 @@ All five of the wights now lay dead behind you.
 What do you do?
 
 Enter the Magistrum. - (Press 1)
-Loot the wights. - (Press 3)
+Loot the wights. - (Press 2)

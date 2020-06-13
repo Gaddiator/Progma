@@ -135,7 +135,6 @@ public class Awakening {
 
                     boolean looping = true;
                     while (looping) {
-                        System.out.println("\n\n SummonMagicalLightOutcome - Inner Loop \n\n");
                         try {
                             userInput = scan.nextInt();
                             if (userInput == 1) {
@@ -389,7 +388,7 @@ public class Awakening {
 
     @SuppressWarnings("Duplicates")
     private static void LeaveThroughTheOtherDoorOutcome() throws IOException {
-        System.out.println("\n'1'\n");
+        System.out.println("\n'start'\n");
         //Handling outcome
         if (WightBattleSceneControl == 0) {
             //Leave through the other door one.
@@ -437,14 +436,11 @@ public class Awakening {
 
         boolean loop = true;
         while (loop) {
-            userInput = scan.nextInt();
-            System.out.println("\n'1'\n");
             try {
+                userInput = scan.nextInt();
                 if (userInput == 1) {
-                    System.out.println("\n'2'\n");
                     boolean looping = true;
                     while (looping) {
-                        System.out.println("\n'3'\n");
                         //Player turn
                         int PlayerTurnDamage = (int) (Math.random() * MaxMagicalAttackDamage + MinMagicalAttackDamage) - (EnemyMagicalDefense);
                         if (x == 0) {
@@ -496,14 +492,11 @@ public class Awakening {
                         }
                     }
                 } else {
-                    System.out.println("\n'Invalid Number'\n");
-                    System.out.println("\n'1'\n");
                     System.out.println("Invalid entry!");
                     System.out.println("Please enter '1' to continue.");
                     scan.nextLine();
                 }
             } catch (InputMismatchException e) {
-                System.out.println("\n'Input Mistmatch'\n");
                 System.out.println("Invalid entry!");
                 System.out.println("Please enter '1' to continue.");
                 scan.nextLine();
