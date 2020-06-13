@@ -1,2 +1,2 @@
-Iron Shortsword:0
-Steel Shortsword:0
+Iron Short Sword:0
+Steel Short Sword:1

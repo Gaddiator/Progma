@@ -52,8 +52,8 @@ public class Awakening {
             try {
                 userInput = scan.nextInt();
                 if(userInput == 1){
-                    //Clearing terminal.
-                    clearTerminal();
+                    //Terminating.
+                    iterate = false;
 
                     //Scene description Part 2.
                     readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneDescription2.txt");
@@ -62,8 +62,7 @@ public class Awakening {
                     System.out.println("Please enter '1' to continue.");
                     scan.nextLine();
                 }
-            }
-            catch(InputMismatchException e) {
+            } catch(InputMismatchException e) {
                 System.out.println("Invalid entry!");
                 System.out.println("Please enter '1' to continue.");
                 scan.nextLine();
@@ -78,11 +77,34 @@ public class Awakening {
                     //Summon magical light.
                     readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\1 - SummonMagicalLight.txt");
 
+                    boolean iterator = true;
+                    while (iterator) {
+                        try {
+                            userInput = scan.nextInt();
+                            if(userInput == 1){
+                                //Terminating.
+                                iterator = false;
+
+                                //Scene description Part 2.
+                                readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\1 - SummonMagicalLightContinued.txt");
+                            } else {
+                                System.out.println("Invalid entry!");
+                                System.out.println("Please enter '1' to continue.");
+                                scan.nextLine();
+                            }
+                        } catch(InputMismatchException e) {
+                            System.out.println("Invalid entry!");
+                            System.out.println("Please enter '1' to continue.");
+                            scan.nextLine();
+                        }
+                    }
+
                     //Adding spells to players inventory.
                     PlayerInventory.setSpellCastingMagic(false, false, false, false, true, false);
 
                     //Terminating
                     loop = false;
+
 
                     //Summon magical light.
                     SummonMagicalLightOutcome();
@@ -410,7 +432,6 @@ public class Awakening {
 
     @SuppressWarnings("Duplicates")
     private static void LeaveThroughTheOtherDoorOutcome() throws IOException {
-        System.out.println("\n'start'\n");
         //Handling outcome
         if (WightBattleSceneControl == 0) {
             //Leave through the other door one.
@@ -899,10 +920,5 @@ public class Awakening {
         } catch (IOException e) {
             System.out.println("Error file not found\n" + e);
         }
-    }
-
-    public static void clearTerminal() {
-        System. out. print("\033[H\033[2J");
-        System. out. flush();
     }
 }

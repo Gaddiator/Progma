@@ -1,2 +1,2 @@
 ElectricityShield:0
-EnergyShield:1
+EnergyShield:0

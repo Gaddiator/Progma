@@ -1,5 +1,5 @@
 The bookshelves in the library are mostly destroyed, charred tome's littered around the room. The windows are smashed and the doors have been blown off their hinges, the snow is slowly creeping back in through the small gap.
-You see a collection of smashed apothecary tools and glass jars laying on their side in the corner. Each on is letting off an acrid yellow and brown coloured smoke. The strong smell of chemicals only aggravates your nausea.
+You see a collection of smashed apothecary tools and glass jars laying on their side in the corner. Each one is letting off an acrid yellow and brown coloured smoke. The strong smell of chemicals only aggravates your nausea.
 You can just about make out the silhouette of the main door ahead of you, which leads outside, into the icy mountains. You can also see the other door over to your right which leads deeper into the collage to the magistrum.
 
 Some faint moonlight trickles through a broken skylight above you illuminating your immediate surrounding with a dim glow. You personally think its the most beautiful light you've ever seen in all your days. The only light.
@@ -11,5 +11,7 @@ Summon a magical light. - (Press 1)
 Leave through the main door. - (Press 2)
 Leave through the other door. - (Press 3)
 Cast a life detection spell. - (Press 4)
+
+// - Under Development...
 Search for food and water. - (Press 5)
 Create a temporary camp. - (Press 6)
