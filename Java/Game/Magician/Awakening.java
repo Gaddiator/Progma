@@ -369,12 +369,12 @@ public class Awakening {
                                 TheMagistrum.first();
                             } else {
                                 System.out.println("Invalid entry");
-                                System.out.println("Please enter '1', '2', '3' or '4'.");
+                                System.out.println("Please enter '1', '2' or '3'.");
                                 scan.nextLine();
                             }
                         } catch (InputMismatchException e) {
                             System.out.println("Invalid entry");
-                            System.out.println("Please enter '1', '2', '3' or '4'.");
+                            System.out.println("Please enter '1', '2' or '3'.");
                             scan.nextLine();
                         }
                     }
@@ -436,12 +436,12 @@ public class Awakening {
                                     TheMagistrum.first();
                                 } else {
                                     System.out.println("Invalid entry");
-                                    System.out.println("Please enter '1', '2', '3' or '4'.");
+                                    System.out.println("Please enter '1', '2' or '3'.");
                                     scan.nextLine();
                                 }
                             } catch (InputMismatchException e) {
                                 System.out.println("Invalid entry");
-                                System.out.println("Please enter '1', '2', '3' or '4'.");
+                                System.out.println("Please enter '1', '2' or '3'.");
                                 scan.nextLine();
                             }
                         }
@@ -481,12 +481,12 @@ public class Awakening {
                                 TheMagistrum.first();
                             } else {
                                 System.out.println("Invalid entry");
-                                System.out.println("Please enter '1', '2', '3' or '4'.");
+                                System.out.println("Please enter '1', '2' or '3'.");
                                 scan.nextLine();
                             }
                         } catch (InputMismatchException e) {
                             System.out.println("Invalid entry");
-                            System.out.println("Please enter '1', '2', '3' or '4'.");
+                            System.out.println("Please enter '1', '2' or '3'.");
                             scan.nextLine();
                         }
                     }
@@ -526,12 +526,12 @@ public class Awakening {
                                 TheMagistrum.first();
                             } else {
                                 System.out.println("Invalid entry");
-                                System.out.println("Please enter '1', '2', '3' or '4'.");
+                                System.out.println("Please enter '1', '2' or '3'.");
                                 scan.nextLine();
                             }
                         } catch (InputMismatchException e) {
                             System.out.println("Invalid entry");
-                            System.out.println("Please enter '1', '2', '3' or '4'.");
+                            System.out.println("Please enter '1', '2' or '3'.");
                             scan.nextLine();
                         }
                     }
@@ -674,23 +674,73 @@ public class Awakening {
 
     @SuppressWarnings("Duplicates")
     private static void CastDetectLifeSpellOutcome() throws IOException {
+
         while (true) {
             try {
-                while (true) {
-                    userInput = scan.nextInt();
-                    if (userInput == 1) {
-                        //Turn and run.
-                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\CastDetectLifeSpellResult\\1 - TurnAndRun.txt");
+                userInput = scan.nextInt();
+                if (userInput == 1) {
+                    //Turn and run.
+                    readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\CastDetectLifeSpellResult\\1 - TurnAndRun.txt");
+
+                    try {
+                        while (true) {
+                            scan.nextLine();
+                            userInput = scan.nextInt();
+                            if (userInput == 1) {
+                                first();
+                            } else if (userInput == 2) {
+                                System.exit(0);
+                            } else {
+                                System.out.println("Invalid entry");
+                                System.out.println("Please enter '1' or '2'.");
+                                scan.next();
+                            }
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid entry");
+                        System.out.println("Please enter '1' or '2'.");
+                        scan.next();
+                    }
+                } else if (userInput == 2) {
+                    //Blast one with a fireball.
+                    readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\CastDetectLifeSpellResult\\2 - BlastOneWithAFireball.txt");
+
+                    //Getting Player Stats.
+                    PlayerStats = Magician.getStats(Stats.PlayerStats);
+
+                    //Reducing player health by damage amount taken.
+                    int CurrentHealth = PlayerStats.get(1);
+                    CurrentHealth = CurrentHealth - 4;
+
+                    if(CurrentHealth <= 0){
+                        playerDeath();
+                    } else if(CurrentHealth >= 1) {
+
+                        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        System.out.println("\nYour health is " + CurrentHealth + "/" + PlayerStats.get(0));
+                        System.out.println("\nYou have gained an experience level in Elemental Magic.\n");
+
+                        System.out.println("You feel slightly shaken after the fight, its not everyday that you get to fight some wights.");
+                        System.out.println("However after a few moments of uncertainty you decide that you need to get back on the move you make toward the...\n");
+
+                        System.out.println("Main door. - (Press 1)");
+                        System.out.println("Door to the magistrum. - (Press 2)");
+                        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                        Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
+
+                        //Killed two wights in library.
+                        WightBattleSceneControl = 2;
 
                         try {
                             while (true) {
-                                scan.nextLine();
                                 userInput = scan.nextInt();
                                 if (userInput == 1) {
-                                    first();
+                                    TheWesternSteeps.first();
                                 } else if (userInput == 2) {
-                                    System.exit(0);
+                                    LeaveThroughTheOtherDoorOutcome();
                                 } else {
+                                    scan.nextLine();
                                     System.out.println("Invalid entry");
                                     System.out.println("Please enter '1' or '2'.");
                                     scan.next();
@@ -701,103 +751,57 @@ public class Awakening {
                             System.out.println("Please enter '1' or '2'.");
                             scan.next();
                         }
-                    } else if (userInput == 2) {
-                        //Blast one with a fireball.
-                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\CastDetectLifeSpellResult\\2 - BlastOneWithAFireball.txt");
-
-                        //Getting Player Stats.
-                        PlayerStats = Magician.getStats(Stats.PlayerStats);
-
-                        //Reducing player health by damage amount taken.
-                        int CurrentHealth = PlayerStats.get(1);
-                        CurrentHealth = CurrentHealth - 4;
-
-                        if(CurrentHealth <= 0){
-                            playerDeath();
-                        } else if(CurrentHealth >= 1) {
-
-                            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                System.out.println("\nYour health is " + CurrentHealth + "/" + PlayerStats.get(0));
-                                System.out.println("\nYou have gained an experience level in Elemental Magic.\n");
-
-                                System.out.println("You feel slightly shaken after the fight, its not everyday that you get to fight some wights.");
-                                System.out.println("However after a few moments of uncertainty you decide that you need to get back on the move you make toward the...\n");
-
-                                System.out.println("Main door. - (Press 1)");
-                                System.out.println("Door to the magistrum. - (Press 2)");
-                            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                            Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
-
-                            //Killed two wights in library.
-                            WightBattleSceneControl = 2;
-
-                            try {
-                                while (true) {
-                                    userInput = scan.nextInt();
-                                    if (userInput == 1) {
-                                        TheWesternSteeps.first();
-                                    } else if (userInput == 2) {
-                                        LeaveThroughTheOtherDoorOutcome();
-                                    } else {
-                                        scan.nextLine();
-                                        System.out.println("Invalid entry");
-                                        System.out.println("Please enter '1' or '2'.");
-                                        scan.next();
-                                    }
-                                }
-                            } catch (InputMismatchException e) {
-                                System.out.println("Invalid entry");
-                                System.out.println("Please enter '1' or '2'.");
-                                scan.next();
-                            }
-                        }
-                    } else if (userInput == 3) {
-                        //Explode One With Magic.
-                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\CastDetectLifeSpellResult\\3 - ExplodeOneWithMagic.txt");
-
-                        //Getting player stats.
-                        Character Magician = new Character();
-                        java.util.ArrayList<Integer> PlayerStats;
-                        PlayerStats = Magician.getStats(Stats.PlayerStats);
-
-                        //Reducing player health by damage amount taken.
-                        int CurrentHealth = PlayerStats.get(1);
-                        CurrentHealth = CurrentHealth - 4;
-
-                        if(CurrentHealth <= 0){
-                            playerDeath();
-                        } else if(CurrentHealth >= 1) {
-                            System.out.println("Your health is " + CurrentHealth + "/" + PlayerStats.get(0));
-                            Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
-
-                            //Killed two wights in library.
-                            WightBattleSceneControl = 2;
-
-                            while (true) {
-                                scan.nextLine();
-                                userInput = scan.nextInt();
-                                if (userInput == 1) {
-                                    //The western steeps.
-                                    TheWesternSteeps.first();
-                                } else if (userInput == 2) {
-                                    //Leave through the other door.
-                                    LeaveThroughTheOtherDoorOutcome();
-                                } else {
-                                    System.out.println("Invalid entry");
-                                    System.out.println("Please enter '1' or '2'!");
-                                }
-                            }
-                        }
-                    } else {
-                        System.out.println("Invalid entry");
-                        System.out.println("Please enter '1', '2' or '3'!");
-                        scan.next();
                     }
+                } else if (userInput == 3) {
+                    //Explode One With Magic.
+                    readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\CastDetectLifeSpellResult\\3 - ExplodeOneWithMagic.txt");
+
+                    //Getting player stats.
+                    Character Magician = new Character();
+                    java.util.ArrayList<Integer> PlayerStats;
+                    PlayerStats = Magician.getStats(Stats.PlayerStats);
+
+                    //Reducing player health by damage amount taken.
+                    int CurrentHealth = PlayerStats.get(1);
+                    CurrentHealth = CurrentHealth - 4;
+
+                    if(CurrentHealth <= 0){
+                        playerDeath();
+                    } else if(CurrentHealth >= 1) {
+                        System.out.println("\nYour health is " + CurrentHealth + "/" + PlayerStats.get(0));
+                        System.out.println("\nDeciding that you need to get back on the move you make toward the...");
+                        System.out.println("\nMain door. - (Press 1)");
+                        System.out.println("Door to the magistrum. - (Press 2)");
+
+                        Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
+
+                        //Killed two wights in library.
+                        WightBattleSceneControl = 2;
+
+                        while (true) {
+                            scan.nextLine();
+                            userInput = scan.nextInt();
+                            if (userInput == 1) {
+                                //The western steeps.
+                                TheWesternSteeps.first();
+                            } else if (userInput == 2) {
+                                //Leave through the other door.
+                                LeaveThroughTheOtherDoorOutcome();
+                            } else {
+                                System.out.println("Invalid entry");
+                                System.out.println("Please enter '1' or '2'!");
+                            }
+                        }
+                    }
+                } else {
+                    System.out.println("Invalid entry");
+                    System.out.println("Please enter '1', '2', or '3'.");
+                    scan.nextLine();
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Invalid entry");
-                System.out.println("Please enter '1', '2', '3' or '4'.");
+                System.out.println("Invalid entry!");
+                System.out.println("Please enter '1', '2', or '3'.");
+                scan.nextLine();
             }
         }
     }
@@ -1076,7 +1080,7 @@ public class Awakening {
     }
 
     private static void playerDeath() {
-        System.out.println("You died!\n");
+        System.out.println("\nYou died!\n");
         System.out.println("Would you like to revert to checkpoint? - (press 1)");
         System.out.println("Would you like to quit? - (press 2)");
 
