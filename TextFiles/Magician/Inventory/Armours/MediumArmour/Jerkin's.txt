@@ -1,4 +1,4 @@
 FlexibleMediumLeatherArmour:0
-ToughMediumLeatherArmour:0
+ToughMediumLeatherArmour:1
 FlexibleMediumFurArmour:0
 ToughMediumFurArmour:0

@@ -33,8 +33,8 @@ public class Awakening {
     private static int userInput = 0;
 
     //Initializing battle and loot scene controls.
-    private static int WightBattleSceneControl = 0;
-    private static int WightLootSceneControl = 0;
+    public static int WightBattleSceneControl;
+    private static int WightLootSceneControl = 1;
 
     //Initializing Luck/RnG
     private static final Random rand = new Random();
@@ -45,6 +45,7 @@ public class Awakening {
     }
 
     public static void first() throws IOException {
+        WightBattleSceneControl = 1;
         //Scene Description Part 1
         readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneDescription1.txt");
         boolean iterate = true;
@@ -118,15 +119,6 @@ public class Awakening {
                     //Leave through the main door.
                     LeaveThroughTheMainDoorOutcome();
                 } else if (userInput == 3) {
-                    //Leave through the other door.
-                    if (WightBattleSceneControl == 0) {
-                        //Leave Through The Other Door One.
-                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\3 - LeaveThroughTheOtherDoor1.txt");
-                    } else if (WightBattleSceneControl == 1) {
-                        //Leave Through The Other Door Two.
-                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\3 - LeaveThroughTheOtherDoor2.txt");
-                    }
-
                     //Terminating
                     loop = false;
 
@@ -175,7 +167,9 @@ public class Awakening {
                     //Increasing player skills.
                     PlayerSkills.ElementalMagic++;
                     PlayerSkills.SpellCasting++;
-                    WightBattleSceneControl++;
+
+                    //Killed two wights in library.
+                    WightBattleSceneControl = 2;
 
                     boolean looping = true;
                     while (looping) {
@@ -215,7 +209,9 @@ public class Awakening {
 
                     //Increasing player skills.
                     PlayerSkills.ElementalMagic++;
-                    WightBattleSceneControl++;
+
+                    //Killed two wights in library.
+                    WightBattleSceneControl = 2;
 
                     boolean looping = true;
                     while (looping) {
@@ -287,6 +283,9 @@ public class Awakening {
                     PlayerSkills.DarkMagic++;
                     PlayerSkills.ElementalMagic++;
 
+                    //Killed two wights in library.
+                    WightBattleSceneControl = 2;
+
                     boolean looping = true;
                     while (looping) {
                         try {
@@ -331,11 +330,6 @@ public class Awakening {
 
     @SuppressWarnings("Duplicates")
     private static void LeaveThroughTheMainDoorOutcome() throws IOException {
-        if (WightBattleSceneControl == 1) {
-            //The western steeps.
-            TheWesternSteeps.first();
-        }
-
         boolean loop = true;
         while (loop) {
             try {
@@ -350,11 +344,40 @@ public class Awakening {
                     //Increasing player skills.
                     PlayerSkills.ElementalMagic++;
 
+                    //Killed two wights in library.
+                    WightBattleSceneControl = 2;
+
                     //Terminating.
                     loop = false;
 
-                    //The western steeps.
-                    TheWesternSteeps.first();
+                    //Handling Scene Transition.
+                    boolean execute = true;
+                    while (execute) {
+                        try {
+                            userInput = scan.nextInt();
+                            if(userInput == 1) {
+                                //Terminating.
+                                execute = false;
+
+                                //The Western steeps.
+                                TheWesternSteeps.first();
+                            } else if (userInput == 2){
+                                //Terminating.
+                                execute = false;
+
+                                //The Magistrum.
+                                TheMagistrum.first();
+                            } else {
+                                System.out.println("Invalid entry");
+                                System.out.println("Please enter '1', '2', '3' or '4'.");
+                                scan.nextLine();
+                            }
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid entry");
+                            System.out.println("Please enter '1', '2', '3' or '4'.");
+                            scan.nextLine();
+                        }
+                    }
                 } else if (userInput == 2) {
                     //Electrolyze yourself.
                     readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\LeaveThroughTheMainDoorResult\\2 - ElectrolyzeYourself.txt");
@@ -369,23 +392,60 @@ public class Awakening {
                     int CurrentHealth = PlayerStats.get(1);
                     CurrentHealth = CurrentHealth - 4;
 
-                    //Updating stats.
-                    Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
-                    System.out.println("Your health is " + CurrentHealth + "/" + PlayerStats.get(0));
+                    if(CurrentHealth <= 0){
+                        playerDeath();
+                    } else if(CurrentHealth >= 1) {
+                        //Updating stats.
+                        Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
 
-                    //Adding spells to players inventory.
-                    PlayerInventory.setElementalMagic(false, false, false, false, false, false, true, false);
-                    PlayerInventory.setSpellCastingMagic(true, false, false, false, false, false);
+                        System.out.println("\nYour health is " + CurrentHealth + "/" + PlayerStats.get(0));
 
-                    //Increasing player skills.
-                    PlayerSkills.ElementalMagic++;
-                    PlayerSkills.SpellCasting++;
+                        System.out.println("\nMain door. - (Press 1)");
+                        System.out.println("Door to the magistrum. - (Press 2)");
 
-                    //Terminating.
-                    loop = false;
+                        //Adding spells to players inventory.
+                        PlayerInventory.setElementalMagic(false, false, false, false, false, false, true, false);
+                        PlayerInventory.setSpellCastingMagic(true, false, false, false, false, false);
 
-                    //The western steeps.
-                    TheWesternSteeps.first();
+                        //Increasing player skills.
+                        PlayerSkills.ElementalMagic++;
+                        PlayerSkills.SpellCasting++;
+
+                        //Killed two wights in library.
+                        WightBattleSceneControl = 2;
+
+                        //Terminating.
+                        loop = false;
+
+                        //Handling Scene Transition.
+                        boolean execute = true;
+                        while (execute) {
+                            try {
+                                userInput = scan.nextInt();
+                                if(userInput == 1) {
+                                    //Terminating.
+                                    execute = false;
+
+                                    //The Western steeps.
+                                    TheWesternSteeps.first();
+                                } else if (userInput == 2){
+                                    //Terminating.
+                                    execute = false;
+
+                                    //The Magistrum.
+                                    TheMagistrum.first();
+                                } else {
+                                    System.out.println("Invalid entry");
+                                    System.out.println("Please enter '1', '2', '3' or '4'.");
+                                    scan.nextLine();
+                                }
+                            } catch (InputMismatchException e) {
+                                System.out.println("Invalid entry");
+                                System.out.println("Please enter '1', '2', '3' or '4'.");
+                                scan.nextLine();
+                            }
+                        }
+                    }
                 } else if (userInput == 3) {
                     //Implode one with magic.
                     readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\LeaveThroughTheMainDoorResult\\3 - ImplodeOneWithMagic.txt");
@@ -396,11 +456,40 @@ public class Awakening {
                     //Increasing player skills.
                     PlayerSkills.DarkMagic++;
 
+                    //Killed two wights in library.
+                    WightBattleSceneControl = 2;
+
                     //Terminating.
                     loop = false;
 
-                    //The western steeps.
-                    TheWesternSteeps.first();
+                    //Handling Scene Transition.
+                    boolean execute = true;
+                    while (execute) {
+                        try {
+                            userInput = scan.nextInt();
+                            if(userInput == 1) {
+                                //Terminating.
+                                execute = false;
+
+                                //The Western steeps.
+                                TheWesternSteeps.first();
+                            } else if (userInput == 2){
+                                //Terminating.
+                                execute = false;
+
+                                //The Magistrum.
+                                TheMagistrum.first();
+                            } else {
+                                System.out.println("Invalid entry");
+                                System.out.println("Please enter '1', '2', '3' or '4'.");
+                                scan.nextLine();
+                            }
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid entry");
+                            System.out.println("Please enter '1', '2', '3' or '4'.");
+                            scan.nextLine();
+                        }
+                    }
                 } else if (userInput == 4) {
                     //Cast a magical shield.
                     readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\LeaveThroughTheMainDoorResult\\4 - CastAMagicalShield.txt");
@@ -412,11 +501,40 @@ public class Awakening {
                     PlayerSkills.SpellCasting++;
                     PlayerSkills.DarkMagic++;
 
+                    //Killed two wights in library.
+                    WightBattleSceneControl = 2;
+
                     //Terminating.
                     loop = false;
 
-                    //The western steeps.
-                    TheWesternSteeps.first();
+                    //Handling Scene Transition.
+                    boolean execute = true;
+                    while (execute) {
+                        try {
+                            userInput = scan.nextInt();
+                            if(userInput == 1) {
+                                //Terminating.
+                                execute = false;
+
+                                //The Western steeps.
+                                TheWesternSteeps.first();
+                            } else if (userInput == 2){
+                                //Terminating.
+                                execute = false;
+
+                                //The Magistrum.
+                                TheMagistrum.first();
+                            } else {
+                                System.out.println("Invalid entry");
+                                System.out.println("Please enter '1', '2', '3' or '4'.");
+                                scan.nextLine();
+                            }
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid entry");
+                            System.out.println("Please enter '1', '2', '3' or '4'.");
+                            scan.nextLine();
+                        }
+                    }
                 } else {
                     System.out.println("Invalid entry");
                     System.out.println("Please enter '1', '2', '3' or '4'.");
@@ -431,22 +549,29 @@ public class Awakening {
     }
 
     @SuppressWarnings("Duplicates")
-    private static void LeaveThroughTheOtherDoorOutcome() throws IOException {
-        //Handling outcome
+    public static void LeaveThroughTheOtherDoorOutcome() throws IOException {
+
+        //Handling wight scene.
         if (WightBattleSceneControl == 0) {
+            System.out.println("Theres nothing left but the looted corpses of the wights.");
+        } else if (WightBattleSceneControl == 1) {
             //Leave through the other door one.
             readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\3 - LeaveThroughTheOtherDoor1.txt");
 
             //Getting character stats.
             WightsStats = Wight.getStats(Stats.GroupOfWightsStats);
             PlayerStats = Magician.getStats(Stats.PlayerStats);
-        } else if (WightBattleSceneControl == 1) {
+
+            WightBattleSceneControl = 1;
+        } else if(WightBattleSceneControl == 2) {
             //Leave through the other door two.
             readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\3 - LeaveThroughTheOtherDoor2.txt");
 
             //Getting character stats. - Error Needs Reviewing!
             WightsStats = Wight.getStats(Stats.TrioOfWightsStats);
             PlayerStats = Magician.getStats(Stats.PlayerStats);
+
+            WightBattleSceneControl = 2;
         }
 
         //Player variables//
@@ -587,38 +712,48 @@ public class Awakening {
                         int CurrentHealth = PlayerStats.get(1);
                         CurrentHealth = CurrentHealth - 4;
 
-                        System.out.println("Your health is " + CurrentHealth + "/" + PlayerStats.get(0));
-                        System.out.println("You have gained an experience level in Elemental Magic.\n");
+                        if(CurrentHealth <= 0){
+                            playerDeath();
+                        } else if(CurrentHealth >= 1) {
 
-                        System.out.println("You feel slightly shaken after the fight, its not everyday that you get to fight some wights.");
-                        System.out.println("However after a few moments of uncertainty you decide that you need to get back on the move you make toward the...\n");
+                            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                System.out.println("\nYour health is " + CurrentHealth + "/" + PlayerStats.get(0));
+                                System.out.println("\nYou have gained an experience level in Elemental Magic.\n");
 
-                        System.out.println("Main door. - (Press 1)");
-                        System.out.println("Door to the magistrum. - (Press 2)");
+                                System.out.println("You feel slightly shaken after the fight, its not everyday that you get to fight some wights.");
+                                System.out.println("However after a few moments of uncertainty you decide that you need to get back on the move you make toward the...\n");
 
-                        Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
+                                System.out.println("Main door. - (Press 1)");
+                                System.out.println("Door to the magistrum. - (Press 2)");
+                            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                        try {
-                            while (true) {
-                                userInput = scan.nextInt();
-                                if (userInput == 1) {
-                                    TheWesternSteeps.first();
-                                } else if (userInput == 2) {
-                                    LeaveThroughTheOtherDoorOutcome();
-                                } else {
-                                    scan.nextLine();
-                                    System.out.println("Invalid entry");
-                                    System.out.println("Please enter '1' or '2'.");
-                                    scan.next();
+                            Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
+
+                            //Killed two wights in library.
+                            WightBattleSceneControl = 2;
+
+                            try {
+                                while (true) {
+                                    userInput = scan.nextInt();
+                                    if (userInput == 1) {
+                                        TheWesternSteeps.first();
+                                    } else if (userInput == 2) {
+                                        LeaveThroughTheOtherDoorOutcome();
+                                    } else {
+                                        scan.nextLine();
+                                        System.out.println("Invalid entry");
+                                        System.out.println("Please enter '1' or '2'.");
+                                        scan.next();
+                                    }
                                 }
+                            } catch (InputMismatchException e) {
+                                System.out.println("Invalid entry");
+                                System.out.println("Please enter '1' or '2'.");
+                                scan.next();
                             }
-                        } catch (InputMismatchException e) {
-                            System.out.println("Invalid entry");
-                            System.out.println("Please enter '1' or '2'.");
-                            scan.next();
                         }
                     } else if (userInput == 3) {
-                        //Explode One WIth Magic.
+                        //Explode One With Magic.
                         readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\CastDetectLifeSpellResult\\3 - ExplodeOneWithMagic.txt");
 
                         //Getting player stats.
@@ -626,27 +761,32 @@ public class Awakening {
                         java.util.ArrayList<Integer> PlayerStats;
                         PlayerStats = Magician.getStats(Stats.PlayerStats);
 
-                        //Incrementing Battle Scene Controller.
-                        WightBattleSceneControl++;
-
                         //Reducing player health by damage amount taken.
                         int CurrentHealth = PlayerStats.get(1);
                         CurrentHealth = CurrentHealth - 4;
-                        System.out.println("Your health is " + CurrentHealth + "/" + PlayerStats.get(0));
-                        Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
 
-                        while (true) {
-                            scan.nextLine();
-                            userInput = scan.nextInt();
-                            if (userInput == 1) {
-                                //The western steeps.
-                                TheWesternSteeps.first();
-                            } else if (userInput == 2) {
-                                //Leave through the other door.
-                                LeaveThroughTheOtherDoorOutcome();
-                            } else {
-                                System.out.println("Invalid entry");
-                                System.out.println("Please enter '1' or '2'!");
+                        if(CurrentHealth <= 0){
+                            playerDeath();
+                        } else if(CurrentHealth >= 1) {
+                            System.out.println("Your health is " + CurrentHealth + "/" + PlayerStats.get(0));
+                            Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), CurrentHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
+
+                            //Killed two wights in library.
+                            WightBattleSceneControl = 2;
+
+                            while (true) {
+                                scan.nextLine();
+                                userInput = scan.nextInt();
+                                if (userInput == 1) {
+                                    //The western steeps.
+                                    TheWesternSteeps.first();
+                                } else if (userInput == 2) {
+                                    //Leave through the other door.
+                                    LeaveThroughTheOtherDoorOutcome();
+                                } else {
+                                    System.out.println("Invalid entry");
+                                    System.out.println("Please enter '1' or '2'!");
+                                }
                             }
                         }
                     } else {
@@ -832,22 +972,44 @@ public class Awakening {
     }
 
     private static void playerVictory() throws IOException {
-        if (WightBattleSceneControl == 0) {
+        if (WightBattleSceneControl == 2) {
             //Description of combat and health.
             System.out.println("You defeated the Wight's!");
             System.out.println("Your health is " + PlayerStats.get(1) + "/" + PlayerStats.get(0));
 
             //Increasing players Experience.
-            PlayerSkills.experience = PlayerSkills.experience + 143;
+            PlayerSkills.experience = PlayerSkills.experience + 87;
+
+            //Increasing player skills.
+            PlayerSkills.ElementalMagic++;
+
+            WightBattleSceneControl = 3;
+
+            //Defeated Trio of wights.
+            readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\LeaveThroughTheOtherDoorResult\\DefeatedTrioOfWights.txt");
+        } else if (WightBattleSceneControl == 1) {
+            //Description of combat and health.
+            System.out.println("You defeated the Wight's!");
+            System.out.println("Your health is " + PlayerStats.get(1) + "/" + PlayerStats.get(0));
+
+            //Increasing players Experience.
+            PlayerSkills.experience = PlayerSkills.experience + 247;
+
+            PlayerStats = Magician.getStats(Stats.PlayerStats);
+
+            WightBattleSceneControl = 3;
+
+            //Resetting Health
+            int Luck = PlayerStats.get(9);
+            Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), PlayerStats.get(1), PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), Luck);
+
+            //Reducing player health by damage amount taken.
+            int CurrentHealth = PlayerStats.get(1);
+            CurrentHealth = CurrentHealth - 4;
 
             //Defeated group of wights.
             readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\LeaveThroughTheOtherDoorResult\\DefeatedGroupOfWights.txt");
-        } else if (WightBattleSceneControl == 1) {
-            //Defeated trio of wights
-            readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\LeaveThroughTheOtherDoorResult\\DefeatedTrioOfWights.txt");
-            PlayerSkills.experience = PlayerSkills.experience + 87;
         }
-
 
         while (true) {
             try {
@@ -876,7 +1038,9 @@ public class Awakening {
         System.out.println("You died!\n");
         System.out.println("Would you like to revert to checkpoint? - (press 1)");
         System.out.println("Would you like to quit? - (press 2)");
-        WightBattleSceneControl = 0;
+
+        //Died Reset Trigger.
+        WightBattleSceneControl = 1;
 
         PlayerStats = Magician.getStats(Stats.PlayerStats);
 
@@ -893,7 +1057,48 @@ public class Awakening {
                         //Restart.
                         Awakening.first();
                     } catch (IOException e) {
-                        e.printStackTrace();
+
+                    }
+                } else if (userInput == 2) {
+                    //Exit
+                    System.exit(0);
+                } else {
+                    System.out.println("Invalid entry");
+                    System.out.println("Please enter '1', '2', '3' or '4'.");
+                    scan.nextLine();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid entry!");
+                System.out.println("Please enter '1', '2', '3' or '4'.");
+                scan.nextLine();
+            }
+        }
+    }
+
+    private static void playerDeath() {
+        System.out.println("You died!\n");
+        System.out.println("Would you like to revert to checkpoint? - (press 1)");
+        System.out.println("Would you like to quit? - (press 2)");
+
+        //Died Reset Trigger.
+        WightBattleSceneControl = 1;
+
+        PlayerStats = Magician.getStats(Stats.PlayerStats);
+
+        //Resetting Health
+        int MaxHealth = PlayerStats.get(0);
+        Magician.updateStats(Stats.PlayerStats, PlayerStats.get(0), MaxHealth, PlayerStats.get(2), PlayerStats.get(3), PlayerStats.get(4), PlayerStats.get(5), PlayerStats.get(6), PlayerStats.get(7), PlayerStats.get(8), PlayerStats.get(9));
+
+        while (true) {
+            try {
+                scan.nextLine();
+                userInput = scan.nextInt();
+                if (userInput == 1) {
+                    try {
+                        //Restart.
+                        Awakening.first();
+                    } catch (IOException e) {
+
                     }
                 } else if (userInput == 2) {
                     //Exit

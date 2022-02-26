@@ -1,10 +1,8 @@
 
-You have gained a experience level in Elemental Magic!
-You gained 143 experience points!
-
-You were hurt in the battle however, your wounds are not too serious and you will recover.
+You were hurt in the battle however, your wounds are not too serious, and you will recover.
 
 You have gained 247 experience points!
+You have gained an experience level in Elemental Magic!
 You have gained 3 attribute points toward your strength stat!
 
 All five of the wights now lay dead behind you.

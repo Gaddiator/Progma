@@ -11,8 +11,5 @@ Rising you turn to the other flesh bag still withering on the ground. Without sy
 You have gained experience in Elemental Magic.
 You have gained experience in SpellCasting.
 
-You feel slightly shaken after the fight, its not everyday that you get to fry a wight.
+You feel slightly shaken after the fight, it's not every day that you get to fry a wight.
 However after a few moments of uncertainty you decide that you need to get back on the move you make toward the...
-
-Main door. - (Press 1)
-Door to the magistrum. - (Press 2)

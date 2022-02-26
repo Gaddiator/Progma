@@ -352,5 +352,35 @@ public class  Character {
         PlayerSkills.DeathMagic = DeathMagic;
         PlayerSkills.DarkMagic = DarkMagic;
     }
+
+    /////////////////////////
+    ////Utility Methods/////
+    ///////////////////////
+
+    public int getMaxHealth(String EnemyOrPlayerStatLocation) {
+        try {
+            FileInputStream fstream = new FileInputStream(EnemyOrPlayerStatLocation);
+            DataInputStream in = new DataInputStream(fstream);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            String strLine;
+            java.util.ArrayList<String> list = new java.util.ArrayList<>();
+            while ((strLine = br.readLine()) != null) {
+                if(strLine.charAt(0) == (int)strLine.charAt(0) && strLine.charAt(1) == (int)strLine.charAt(1)) {
+                    String number = strLine.substring(0 , 2);
+                    list.add(number.replace(" ",""));
+                }
+            }
+            //Setting ClimbingChance from .txt
+            MaxHealth = Integer.parseInt(list.get(1));
+            in.close();
+            fstream.close();
+            br.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        return (int)MaxHealth;
+    }
+
 }
 

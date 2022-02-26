@@ -1,0 +1,14 @@
+Edging into the magistrum through the door you've just killed the wights at you see another old reinforced iron door to the left and a similarly designed hatch on the ground to your right.
+
+The rest of the room is fairly spacious. Smashed pillars and concrete pieces lay scattered about and in center of the room lies a fountain, the sound of the water trickling seems especially loud to your ears.
+Apart from that, all you see is some broken barrels in one corner, a collection of burnt tomes and scattered books, along with some snow creeping in through the broken window frames.
+Glass crunches under your feet as you surreptitiously delve deeper into the room.
+
+You know the hatch to your right leads to the cellar, it's where the food and provisions are stored. The door on left leads to the novice mages quarters.
+All five the wights lay dead behind you.
+
+What do you do?
+
+Enter the novice mage's quarters. - (Press 1)
+Go check the cellar. - (Press 2)
+Rest. - (Press 3)

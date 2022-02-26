@@ -17,6 +17,8 @@ import java.util.Random;
 //Error Management
 import java.io.IOException;
 
+import static Java.Game.Magician.Awakening.WightBattleSceneControl;
+
 public class TheMagistrum {
     //Initializing character data storage.
     private static java.util.ArrayList<Integer> PlayerStats = null;
@@ -37,40 +39,141 @@ public class TheMagistrum {
         first();
     }
 
-    @SuppressWarnings("Duplicates")
     public static void first() throws IOException {
-        //Scene Description.
-        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\SceneDescription1.txt");
+        System.out.println("Wight Battle Scene Control: " + WightBattleSceneControl);
 
-        try {
-            while (true) {
-                userInput = scan.nextInt();
-                if (userInput == 1) {
-                    //Enter the novice mages quarters.
-                    readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\1 - EnterTheNoviceMagesQuarters.txt");
-                } else if (userInput == 2) {
-                    //Go check the cellar.
-                    readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\2 - GoCheckTheCellar.txt");
-                } else if (userInput == 3) {
-                    //Loot the wights.
-                    readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\3 - LootTheWights.txt");
-                    Java.Game.Magician.Awakening.lootTheWights();
-                } else if (userInput == 4) {
-                    //Rest.
-                    readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneEventResults\\4 - Rest.txt");
-                    RestResult();
-                } else {
-                    System.out.println("Invalid entry");
-                    System.out.println("Please enter '1', '2', '3' or '4'.");
+        if (WightBattleSceneControl == 1) {
+
+            //Scene Description - Haven't Killed Wights - Two.
+            Awakening.LeaveThroughTheOtherDoorOutcome();
+
+        } else if (WightBattleSceneControl == 2) {
+
+            //Scene Description - Have Killed Wights - Two.
+            Awakening.LeaveThroughTheOtherDoorOutcome();
+
+        } else if (WightBattleSceneControl == 3) {
+
+            //Scene Description. - Haven't Looted Wights - Group
+            readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\SceneDescription1.txt");
+
+            try {
+                while (true) {
+                    userInput = scan.nextInt();
+                    if (userInput == 1) {
+                        //Enter the novice mages quarters.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\1 - EnterTheNoviceMagesQuarters.txt");
+                    } else if (userInput == 2) {
+                        //Go check the cellar.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\2 - GoCheckTheCellar.txt");
+                    } else if (userInput == 3) {
+                        //Loot the wights.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\3 - LootTheWights.txt");
+                        Java.Game.Magician.Awakening.lootTheWights();
+                    } else if (userInput == 4) {
+                        //Rest.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneEventResults\\4 - Rest.txt");
+                        RestResult();
+                    } else {
+                        System.out.println("Invalid entry");
+                        System.out.println("Please enter '1', '2', '3' or '4'.");
+                    }
                 }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid entry");
+                System.out.println("Please enter '1', '2', '3' or '4'.");
             }
-        } catch (InputMismatchException e) {
-            System.out.println("Invalid entry");
-            System.out.println("Please enter '1', '2', '3' or '4'.");
+
+        } else if (WightBattleSceneControl == 4) {
+
+            //Scene Description. - Have Looted Wights - Group
+            readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\SceneDescription2.txt");
+
+            try {
+                while (true) {
+                    userInput = scan.nextInt();
+                    if (userInput == 1) {
+                        //Enter the novice mages quarters.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\1 - EnterTheNoviceMagesQuarters.txt");
+                    } else if (userInput == 2) {
+                        //Go check the cellar.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\2 - GoCheckTheCellar.txt");
+                    } else if (userInput == 3) {
+                        //Rest.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneEventResults\\4 - Rest.txt");
+                        RestResult();
+                    } else {
+                        System.out.println("Invalid entry");
+                        System.out.println("Please enter '1', '2', '3' or '4'.");
+                    }
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid entry");
+                System.out.println("Please enter '1', '2', '3' or '4'.");
+            }
+
+        } if (WightBattleSceneControl == 5) {
+
+            //Scene Description - Haven't Looted Wights - Trio.
+            readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\SceneDescription1.txt");
+
+            try {
+                while (true) {
+                    userInput = scan.nextInt();
+                    if (userInput == 1) {
+                        //Enter the novice mages quarters.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\1 - EnterTheNoviceMagesQuarters.txt");
+                    } else if (userInput == 2) {
+                        //Go check the cellar.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\2 - GoCheckTheCellar.txt");
+                    } else if (userInput == 3) {
+                        //Loot the wights.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\3 - LootTheWights.txt");
+                        Java.Game.Magician.Awakening.lootTheWights();
+                    } else if (userInput == 4) {
+                        //Rest.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneEventResults\\4 - Rest.txt");
+                        RestResult();
+                    } else {
+                        System.out.println("Invalid entry");
+                        System.out.println("Please enter '1', '2', '3' or '4'.");
+                    }
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid entry");
+                System.out.println("Please enter '1', '2', '3' or '4'.");
+            }
+
+        } else if (WightBattleSceneControl == 6) {
+
+            //Scene Description - Have Looted Wights - Trio.
+            readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\SceneDescription1.txt");
+
+            try {
+                while (true) {
+                    userInput = scan.nextInt();
+                    if (userInput == 1) {
+                        //Enter the novice mages quarters.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\1 - EnterTheNoviceMagesQuarters.txt");
+                    } else if (userInput == 2) {
+                        //Go check the cellar.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\2 - GoCheckTheCellar.txt");
+                    } else if (userInput == 3) {
+                        //Rest.
+                        readFromTextFile("TextFiles\\Magician\\Scenes\\Awakening\\SceneEventResults\\4 - Rest.txt");
+                        RestResult();
+                    } else {
+                        System.out.println("Invalid entry");
+                        System.out.println("Please enter '1', '2', '3' or '4'.");
+                    }
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid entry");
+                System.out.println("Please enter '1', '2', '3' or '4'.");
+            }
         }
     }
 
-    @SuppressWarnings("Duplicates")
     public static void EnterTheNoviceMagesQuartersResult() throws IOException {
         //Enter The Novice Mages Quarters.
         readFromTextFile("TextFiles\\Magician\\TheMagistrum\\1 - EnterTheNoviceMagesQuarters.txt");
@@ -99,7 +202,6 @@ public class TheMagistrum {
         }
     }
 
-    @SuppressWarnings("Duplicates")
     public static void RestResult() throws IOException {
         readFromTextFile("TextFiles\\Magician\\Scenes\\TheMagistrum\\4 - Rest.txt");
 

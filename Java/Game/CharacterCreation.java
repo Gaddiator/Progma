@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class CharacterCreation {
 
+    private static boolean confirm;
     private static String playerName;
     private static String playerClass;
     private static String userInput;
@@ -29,6 +30,7 @@ public class CharacterCreation {
 
         System.out.println("\nPlease enter your name.");
         playerName = scan.next();
+
         System.out.println("\nWelcome, " + playerName + " to Progma." );
         System.out.println("\nIn the lands of Progma there are three classes for you to choose from.");
         System.out.println("Each has there own advantages and disadvantages, with your overall play style revolving around your class choice.\n");
